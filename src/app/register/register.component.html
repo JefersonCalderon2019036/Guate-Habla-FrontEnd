@@ -1,1 +1,36 @@
-<p>register works!</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Registro</title>
+  </head>
+  <body>
+<!--Logo Kinal-->
+    <div class="login">
+        <img src="https://i.pinimg.com/564x/db/2a/cc/db2acc1c5b34e18ff5af2b84666ddf28.jpg" alt="" class="GuateHablaLogo">
+      <h1>Registrate</h1>
+      <form action="Inicio.html">
+<!-- NOMBRES -->
+        <label for="Usuario">Nombre<span class="text-danger">*</span></label>
+        <input type="text" required="" placeholder="Primer Nombre">   
+        <label for="Usuario">Apellido<span class="text-danger">*</span></label>
+        <input type="text" required="" placeholder="Primer Apellido">  
+<!--CUI-->
+        <label for="Usuario">CUI<span class="text-danger">*</span></label>
+        <input minlength="15" maxlength="15" type="text" required="" pattern="[1-9]+" placeholder="Ingrese su numero de CUI">            
+<!---correo elctronico-->
+        <label for="Usuario">Correo Electronico<span class="text-danger">*</span></label>
+        <input type="text" required="" placeholder="Ingrese un correo electronico">
+<!-- CONTRASEÑA -->
+        <label for="Contraseña">Contraseña<span class="text-danger">*</span></label>
+        <input type="password" required="" placeholder="Crea una contraseña segura">
+<!--Boton-->        
+<input   type="submit"  value="REGISTRATE">
+       
+       <b  href="#">¿Ya tienes Un Usuario? <a class="link" href="login">  Inicia Sesion</a> </b>
+      </form>
+    </div>
+
+  </body>
+</html>
+  

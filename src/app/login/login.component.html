@@ -5,19 +5,18 @@
     <title>Login</title>
   </head>
   <body>
-
     <div class="login">
         <img src="https://i.pinimg.com/564x/db/2a/cc/db2acc1c5b34e18ff5af2b84666ddf28.jpg" alt="" class="GuateHablaLogo">
-      <h1>Ingresar</h1>
+      <h1>Bienvenido</h1>
       <form action="Inicio.html">
         <!-- CORREO ELCTRONICO -->
-        <label for="Usuario">Correo Electronico</label>
-        <input type="text" placeholder="Correo Electronico">
+        <label for="Usuario">Correo Electronico<span class="text-danger">*</span></label>
+        <input type="text" required="" placeholder="Correo Electronico">
         <!-- CONTRASEÑA -->
-        <label for="Contraseña">Contraseña</label>
-        <input type="password" placeholder="Contraseña">
+        <label for="Contraseña">Contraseña<span class="text-danger">*</span></label>
+        <input type="password" required="" placeholder="Contraseña">
         <input type="submit" value="INGRESAR">
-       <b href="#">  ¿No Tienes Un Usuario? <a calss="link" href="Registro.html">  Registrate</a> </b>
+       <b href="#">  ¿No Tienes Un Usuario? <a calss="link" href="register">  Registrate</a> </b>
       </form>
     </div> 
   
