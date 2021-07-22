@@ -4,12 +4,14 @@ import { InicioComponent } from './inicio/inicio.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { PerfilComponent} from './perfil/perfil.component';
 
 const routes: Routes = [
   {path: "inicio", component: InicioComponent},
   {path: "principal", component: PrincipalComponent},
   {path: "login", component: LoginComponent},
   {path: "register", component: RegisterComponent},
+  {path: "perfil", component: PerfilComponent},
   {path: "**", component: InicioComponent}
 ];
 
