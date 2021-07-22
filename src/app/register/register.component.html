@@ -12,22 +12,26 @@
       <form action="Inicio.html">
 <!-- NOMBRES -->
         <label for="Usuario">Nombre<span class="text-danger">*</span></label>
-        <input type="text" required="" placeholder="Primer Nombre">   
-        <label for="Usuario">Apellido<span class="text-danger">*</span></label>
-        <input type="text" required="" placeholder="Primer Apellido">  
+        <input type="text" required="" placeholder="Primer Nombre" name="name" #name="ngModel" [(ngModel)]="usuarioModel.name">  
+        <label for="Usuario">Nombre usuario<span class="text-danger">*</span></label>
+        <input type="text" required="" placeholder="Nombre de usuario" name="user" #user="ngModel" [(ngModel)]="usuarioModel.user">  
+        <label for="Usuario">Dirección<span class="text-danger">*</span></label>
+        <input type="text" required="" placeholder="Dirección" name="direccion" #direccion="ngModel" [(ngModel)]="usuarioModel.direccion">
+        <label for="Usuario">Telefono<span class="text-danger">*</span></label>
+        <input type="text" required="" placeholder="0" name="telefono" #telefono="ngModel" [(ngModel)]="usuarioModel.telefono">
 <!--CUI-->
         <label for="Usuario">CUI<span class="text-danger">*</span></label>
-        <input minlength="13" maxlength="13" type="text" required="" pattern="[1-9]+" placeholder="Ingrese los 13 digitos de su DPI">            
+        <input minlength="13" maxlength="13" type="text" required="" pattern="[1-9]+" placeholder="Ingrese los 13 digitos de su DPI" name="dpi" #dpi="ngModel" [(ngModel)]="usuarioModel.dpi">            
 <!---correo elctronico-->
         <label for="Usuario">Correo Electronico<span class="text-danger">*</span></label>
-        <input type="text" required="" placeholder="Ingrese un correo electronico">
+        <input type="text" required="" placeholder="Ingrese un correo electronico" name="email" #email="ngModel" [(ngModel)]="usuarioModel.email">
 <!-- CONTRASEÑA -->
         <label for="Contraseña">Contraseña<span class="text-danger">*</span></label>
-        <input type="password" required="" placeholder="Crea una contraseña segura">
+        <input type="password" required="" placeholder="Crea una contraseña segura" name="password" #password="ngModel" [(ngModel)]="usuarioModel.password">
 <!--Boton-->        
-<input   type="submit"  value="REGISTRATE">
+<input   type="submit"  value="REGISTRATE" (click) = "registrar()">
        
-       <b  href="#">¿Ya tienes Un Usuario? <a class="link" href="login">  Inicia Sesion</a> </b>
+       <b  href="#">¿Ya tienes Un Usuario? <a class="link" routerLink="/login" routerLinkActive="active">  Inicia Sesion</a> </b>
       </form>
     </div>
 
