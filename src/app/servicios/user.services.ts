@@ -9,7 +9,10 @@ import { serviciosglobales } from './rutaglobal.services';
   })
   export class UsersServices {
     public url: string;
-    public encabezasintoken = new HttpHeaders().set('Content-Type','application/json');
+    public token: any ;
+    public identidad: any;
+    public encabezadosintoken = new HttpHeaders().set('Content-Type','application/json');
+    public encabezadocontoken = this.encabezadosintoken.set('Authorization', this.getToken());
 
     constructor(public _http: HttpClient) {
         this.url = serviciosglobales.url;
@@ -18,13 +21,68 @@ import { serviciosglobales } from './rutaglobal.services';
      //funcion para Iniciar sesión
      login(usuario: usuarios): Observable<any>{
         let params = JSON.stringify(usuario);
-        return this._http.post(this.url + 'login', params, {headers: this.encabezasintoken});
+        return this._http.post(this.url + 'login', params, {headers: this.encabezadosintoken});
     }
 
     //funcion para registrar
     registrar(usuario: usuarios): Observable<any>{
         let params = JSON.stringify(usuario);
-        return this._http.post(this.url + 'register', params, {headers: this.encabezasintoken});
+        return this._http.post(this.url + 'register', params, {headers: this.encabezadosintoken});
+    }
+
+     //funcion para obtener el token desde el localStorage
+     getToken(){
+      var token2 = localStorage.getItem('token');
+      if(token2 != 'undefined'){
+        this.token = token2;
+      }else{
+        this.token = null;
+      }
+      return this.token;
+    }
+
+    //funcion para obtener el tol
+    getRol(){
+      var identidad2 = localStorage.getItem('Rol');
+      if(identidad2 != 'undefined'){
+        this.identidad = identidad2
+      }else{
+        this.identidad = null;
+      }
+      return this.identidad;
+    }
+
+    //funcion para obtener el nombre del usuario
+    getnombre(){
+      var identidad2 = localStorage.getItem('nombre');
+      if(identidad2 != 'undefined'){
+        this.identidad = identidad2
+      }else{
+        this.identidad = null;
+      }
+      return this.identidad;
+    }
+
+    //funcion para obtener la imagen del usuario
+    getimagenperfil(){
+      var identidad2 = localStorage.getItem('imagendemiperfil');
+      if(identidad2 != 'undefined'){
+        this.identidad = identidad2
+      }else{
+        this.identidad = null;
+      }
+      return this.identidad;
+    }
+
+    //funcion para obtener el id del usuario
+    getId(){
+      var identidad2 = localStorage.getItem('iddelusuario');
+      if(identidad2 != 'undefined'){
+        this.identidad = identidad2
+      }else{
+        this.identidad = null;
+      }
+      return this.identidad;
     }
 
   }

@@ -10,13 +10,19 @@
             <a class="nav-link active"  href="#">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active"  routerLink="/login" routerLinkActive="active">Iniciar sesión</a>
+            <a class="nav-link active" *ngIf="verificaciondeltoken2" routerLink="/principal" routerLinkActive="active">Principal</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" routerLink="/registrar" routerLinkActive="active">Registrar</a>
+            <a class="nav-link active" *ngIf="verificaciondeltoken" routerLink="/login" routerLinkActive="active">Iniciar sesión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" *ngIf="verificaciondeltoken" routerLink="/registrar" routerLinkActive="active">Registrar</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active"  href="#">Contactanos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" *ngIf="verificaciondeltoken2" (click) ="cerrarsecion()" >Cerrar Sesión</a>
           </li>
         </ul> 
       </div>

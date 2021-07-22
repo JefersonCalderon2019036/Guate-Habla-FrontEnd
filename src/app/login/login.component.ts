@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("nombre", this.identidad.name);
         localStorage.setItem("imagendemiperfil", this.identidad.img);
         localStorage.setItem("iddelusuario", this.identidad._id);
+        this._router.navigate(['/menudenavegacion'])
         this._router.navigate(['/principal'])
       },
       (error) => {
