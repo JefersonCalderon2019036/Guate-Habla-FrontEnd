@@ -6,11 +6,11 @@
       <form action="Inicio.html">
         <!-- CORREO ELCTRONICO -->
         <label for="Usuario">Correo Electronico<span class="text-danger">*</span></label>
-        <input type="text" required="" placeholder="Correo Electronico">
+        <input type="text" required="" placeholder="Correo Electronico" name="email" #email="ngModel" [(ngModel)]="usuarioModel.email">
         <!-- CONTRASEÑA -->
         <label for="Contraseña">Contraseña<span class="text-danger">*</span></label>
-        <input type="password" required="" placeholder="Contraseña">
-        <input type="submit" value="INGRESAR">
+        <input type="password" required="" placeholder="Contraseña" name="password" #password="ngModel" [(ngModel)]="usuarioModel.password">
+        <input type="submit" value="INGRESAR" (click) ="login()">
        <b href="#">  ¿No Tienes Un Usuario? <a calss="link" href="register" routerLink="/registrar" routerLinkActive="active">  Registrate</a> </b>
       </form>
     </div> 
