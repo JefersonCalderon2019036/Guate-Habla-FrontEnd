@@ -1,2 +1,34 @@
 <app-menudenavegacion></app-menudenavegacion>
-<p>principal works!</p>
+
+<div style="display: flex;">
+    <div style="width: 60%;">
+        <div class="card border border-info" *ngFor="let noticia of noticias" style="width: 100%; margin-left: 5%; margin-top: 5%;">
+            <img src={{noticia.img}} class="card-img-top">
+            <div class="card-body">
+              <div style="display: flex; width: 100%;"><h5 class="card-title" style="width: 90%;">{{noticia.titulo}}</h5><h5 class="card-title">{{noticia.fechaCreacion}}</h5></div>
+              <p class="card-text">{{noticia.descripcion}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<img data-bs-toggle="modal" data-bs-target="#ModalDeMensajes" class="icono-mensajes" src="https://img2.freepng.es/20180705/bs/kisspng-computer-icons-email-electronic-mailing-list-clip-send-email-5b3dbe23d579c5.7984832715307730278744.jpg" alt="">
+
+<!-- Modal -->
+<div class="modal fade" style="margin-top: 20%;" id="ModalDeMensajes" tabindex="-0.5" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Chats</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Escribe tu mensajes" aria-label="Escribe tu mensajes" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
