@@ -1,35 +1,79 @@
 <app-menudenavegacion></app-menudenavegacion>
-
-<div style="display: flex;">
-    <div style="width: 60%;">
-        <div class="card border border-info" *ngFor="let noticia of noticias" style="width: 100%; margin-left: 5%; margin-top: 5%;">
-            <img src={{noticia.img}} class="card-img-top">
-            <div class="card-body">
-              <div style="display: flex; width: 100%;"><h5 class="card-title" style="width: 90%;">{{noticia.titulo}}</h5><h5 class="card-title">{{noticia.fechaCreacion}}</h5></div>
-              <p class="card-text">{{noticia.descripcion}}</p>
-            </div>
-        </div>
+<body>
+  <div style="width: 80%; margin-left: 10%;margin-right: 10%;">
+    <div class="titulo" style="width: 90%; display:flex;">
+      <h2 style="margin-left: 5%; margin-top:5%; width:90%; text-transform: uppercase">noticias de guatemala</h2>
+      <img *ngIf="verificaciondelrol" style="width: 50px; margin-top:5%;" data-bs-toggle="modal" data-bs-target="#exampleModal" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAABO0lEQVQ4T7WUjTEEQRBG30VABogAESADIkAEiIAMXAbI4ESACMiAEE4E1FszV31Tu7M7ha7aup/pftv9dU/P+AebNTAPgY/0VMNq0G3gAjgG/B7tGbgHHvroQ9BL4BrYHKnkDTgH/FxZH9QMThtkWQJHEVxCzfC2AZhdBe9nvSNU3V4rJZvNXuWl6nvmWyJ0nhozlKi+TsBTpZIds41Qx2WrEjAFegXMI/RrRMsp0BerydC+stTQeayZ5wfBYQ1qk96LaCchzp8Bzu1u8LMPNi/bGtQ//6L8bgKipmUpZdlTND0BFhHqjN39ovufaUcsyxulhlGzcomoadQwnnfjVA6/vw1Qho3Gq/qYtlkX1rdQWsEClc77Pwj1wBG7GdlWaqhPV3K0sc0v3CXtk83rvEgyrbJrgTZK++P+Daw3PBbI4QIEAAAAAElFTkSuQmCC"/>
     </div>
-</div>
+    <hr style="color: black; margin-left: 5%; margin-right: 5%;">
+      <div *ngFor="let noticia of noticias">
+        <div style="background-color: black;"(click)="detallesnoticias(noticia._id)" class="card border border-info"  style="width: 90%; margin-left: 5%; margin-top: 5%;">
+          <img src={{noticia.img}} class="card-img-top">
+          <div class="card-body" style="background-color: black;">
+            <div style="display: flex; width: 100%; color: white;">
+              <h5 class="card-title" style="width: 85%;">{{noticia.titulo}}</h5>
+              <h5 class="card-title">{{noticia.fechaCreacion}}</h5></div>
+          </div>
+        </div>
+      </div>
+  </div>
+<br>
+</body>
 
 <img data-bs-toggle="modal" data-bs-target="#ModalDeMensajes" class="icono-mensajes" src="https://img2.freepng.es/20180705/bs/kisspng-computer-icons-email-electronic-mailing-list-clip-send-email-5b3dbe23d579c5.7984832715307730278744.jpg" alt="">
 
 <!-- Modal -->
-<div class="modal fade" style="margin-top: 20%;" id="ModalDeMensajes" tabindex="-0.5" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
+<div style="border-color: white;" class="modal fade" style="margin-top: 20%;" id="ModalDeMensajes" tabindex="-0.5" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="background-color: black; border-color: white;">
+      <div class="modal-content" style="background-color: black; border-color: white;">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Chats</h5>
+          <h5 class="modal-title" style="color: white;" id="exampleModalLabel">Chats</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-3" style="width: 90%; margin-left: 5%; border-color: white;" >
             <input type="text" class="form-control" placeholder="Escribe tu mensajes" aria-label="Escribe tu mensajes" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Enviar</button>
+            <button style="background-color: #199200; color: white;" class="btn btn-outline-secondary" type="button" id="button-addon2">Enviar</button>
         </div>
       </div>
     </div>
   </div>
 
+<<<<<<< Updated upstream
+=======
+  <!-- Modal -->
+<div style="margin-top: 20%;" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="background-color: black; border-color: white; width: 80%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color: white;">Nueva noticia</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="" style="display: flex;">
+          <h6 style="color:white; width: 45%;">Fecha de creacion</h6>
+          <input type="date" style="width: 55%"  name="fechaCreacion" #fechaCreacion="ngModel" [(ngModel)]="NoticiaModel.fechaCreacion">
+        </div>
+        <div class="" style="display: flex;">
+          <h6 style="color:white; width: 45%;">Titulo</h6>
+          <input type="text" style="width: 55%"  name="titulo" #titulo="ngModel" [(ngModel)]="NoticiaModel.titulo">
+        </div>
+        <div class="" style="display: flex;">
+          <h6 style="color:white; width: 45%;">Descripción</h6>
+          <input type="text" style="width: 55%"  name="descripcion" #descripcion="ngModel" [(ngModel)]="NoticiaModel.descripcion">
+        </div>
+        <div class="" style="display: flex;">
+          <h6 style="color:white; width: 45%;">Imagen</h6>
+          <input type="text" style="width: 55%"  name="img" #img="ngModel" [(ngModel)]="NoticiaModel.img">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+        <button type="button" class="btn btn-primary" (click)="AgregarUnaNoticia()" data-bs-dismiss="modal">Agregar noticia</button>
+      </div>
+    </div>
+  </div>
+</div>
+>>>>>>> Stashed changes

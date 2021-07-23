@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav" style="width: 80%;">
           <li class="nav-item">
-            <a class="nav-link active"  routerLink="/inicio" routerLinkActive="active">Inicio</a>
+            <a class="nav-link active"  *ngIf="verificaciondeltoken" routerLink="/inicio" routerLinkActive="active">Inicio</a>
           </li>
           <li class="nav-item" *ngIf="verificaciondeltoken2">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAABM0lEQVQ4T72UPUoDYRCGn/cEamWptlb2Fqa2kCBY6wkkFxAUvIB4AJNWEMwJYkBs9QbGwsLKeIJXJnwJmzVxf0IysLDfMvPMvDPfjliCqQrT9rqkYVFMaajtbeAVeAQ6kp7mwatAGwm4lmADoJ0SxPvEJtBUyWmRNKAJ7OX8ouq2pE58z0KjV+MqSrBnutxIao2gtkNaL6QkSXWgEd+X1MhDryRd1iHa9kqhdYrMxsyU/wFMXY8KWQ4Wlm/7EBhKeknDXqyntp+B/aTiVtJ54aBs/7kB41th+wS4z7VlE/j6V77tO+AsEziQtJNkHgHdHHQD+C6Cxq84ZZJikYzM9gNwnI4Xkq4L5ZeZuO1d4EfS57xBxVp7LwMr8OlKamYXSguIZ6smvB/xkt5K79MqiZYC/QVT160WomrVTQAAAABJRU5ErkJggg=="/>
@@ -37,15 +37,19 @@
           </li>
         </ul> 
 
-        <header>
+        <header >
           <nav class="navegacion">
             <ul class="menu">
-              <li><div class="" style="display: flex;"  routerLink="/principal" routerLinkActive="active">
+              <li><div class="" style="display: flex;" routerLink="/principal" routerLinkActive="active">
                 <img src={{imagendemiperfil}} style="width: 50px; margin-right: 10%;">
                 <a href="#" style="color:white; text-decoration: none;">{{nombre}}</a></div>
                 <ul class="submenu" style="margin-top: 5%; background-color: black;">
+<<<<<<< Updated upstream
                   <!--Puse redireccionamiento a perfil, revisar si contiene tiene errores-->>
                   <li><a href="perfil">Mi perfil</a></li>
+=======
+                  <li><a routerLink="/perfil" routerLinkActive="active">Mi perfil</a></li>
+>>>>>>> Stashed changes
                   <li><a (click) ="cerrarsecion()">Cerrar Sesión</a></li>
                 </ul>
               </li>

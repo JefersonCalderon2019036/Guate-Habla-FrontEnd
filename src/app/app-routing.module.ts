@@ -6,7 +6,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PerfilComponent} from './perfil/perfil.component';
 import { MenudenavegacionComponent } from './menudenavegacion/menudenavegacion.component';
+<<<<<<< Updated upstream
 import { ContactanosComponent} from './contactanos/contactanos.component';
+=======
+import { DetallesnoticiasComponent } from './detallesnoticias/detallesnoticias.component';
+>>>>>>> Stashed changes
 
 const routes: Routes = [
   {path: "inicio", component: InicioComponent},
@@ -14,6 +18,7 @@ const routes: Routes = [
   {path: "login", component: LoginComponent},
   {path: "registrar", component: RegisterComponent},
   {path: "perfil", component: PerfilComponent},
+  {path: "detallesnoticias", component: DetallesnoticiasComponent},
   {path: "menudenavegacion", component: MenudenavegacionComponent},
   {path: "contactanos", component: ContactanosComponent},
   {path: "**", component: InicioComponent}

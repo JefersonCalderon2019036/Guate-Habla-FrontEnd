@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { noticias } from '../modelos/noticias.modelos';
 import { serviciosglobales } from './rutaglobal.services';
 
 @Injectable({
@@ -22,6 +23,17 @@ import { serviciosglobales } from './rutaglobal.services';
         return this._http.get(this.url + "verTodasNoticias", {headers: this.encabezadocontoken})
     }
 
+    //funcion para optener una sola noticias
+    VerSolaUnaNoticia(): Observable<any>{
+      return this._http.get(this.url + "verNoticiaId/"+this.getsolounanoticia(), {headers: this.encabezadocontoken})
+    }
+
+    //funcion para agregar una nueva noticias
+    AgregarUnaNoticia(nuevanoticia: noticias): Observable<any>{
+      let params = JSON.stringify(nuevanoticia);
+      return this._http.post(this.url + "agregarNoticia", params, {headers: this.encabezadocontoken})
+    }
+
     //funcion para obtener el token desde el localStorage
     getToken(){
         var token2 = localStorage.getItem('token');
@@ -32,4 +44,15 @@ import { serviciosglobales } from './rutaglobal.services';
         }
         return this.token;
       }
+    
+    //funcion para obtener el token desde el localStorage
+    getsolounanoticia(){
+      var token2 = localStorage.getItem('IdSoloUnaNoticia');
+      if(token2 != 'undefined'){
+        this.token = token2;
+      }else{
+        this.token = null;
+      }
+      return this.token;
+    }
   }

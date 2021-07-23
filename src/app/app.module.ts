@@ -11,7 +11,11 @@ import { RegisterComponent } from './register/register.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+<<<<<<< Updated upstream
 import { ContactanosComponent } from './contactanos/contactanos.component';
+=======
+import { DetallesnoticiasComponent } from './detallesnoticias/detallesnoticias.component';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { ContactanosComponent } from './contactanos/contactanos.component';
     LoginComponent,
     RegisterComponent,
     PerfilComponent,
+<<<<<<< Updated upstream
     ContactanosComponent
+=======
+    DetallesnoticiasComponent
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

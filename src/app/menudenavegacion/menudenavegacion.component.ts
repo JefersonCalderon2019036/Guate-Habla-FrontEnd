@@ -77,6 +77,7 @@ export class MenudenavegacionComponent implements OnInit {
     localStorage.setItem("nombre", "");
     localStorage.setItem("imagendemiperfil", "");
     localStorage.setItem("iddelusuario", "");
+    localStorage.setItem("IdSoloUnaNoticia", "");
     this._router.navigate(['/inicio']);
     this.VerificacionDelToken();
     this.VerificacionDelToken2();
