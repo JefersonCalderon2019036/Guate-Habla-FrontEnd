@@ -3,17 +3,17 @@ body {
     background: url(https://i.pinimg.com/originals/0b/b8/7a/0bb87a7e4573405c8a42e0e937471f77.jpg) no-repeat center center;
     background-size: cover;
     font-family: sans-serif;
-    height: 100vh;
+    height: 140vh;
     
     
 }
 
 .login {
-    width: 400px;
-    height: 650px;
-    background: rgba(0, 0, 0, 0.541);
+    width: 40%;
+    height: 110%;
+    background: linear-gradient(#070707, transparent, #070707);
     color: #fff;
-    top: 60%;
+    top:73%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -30,7 +30,7 @@ body {
     position: absolute;
     top: -50px;
     left: calc(50% - 50px);
-    opacity: 0.2;
+    border: 3px solid #FFFFFF;
   }
   
   .login h1 {

@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ContactanosComponent } from './contactanos/contactanos.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     PrincipalComponent,
     LoginComponent,
     RegisterComponent,
-    PerfilComponent
+    PerfilComponent,
+    ContactanosComponent
   ],
   imports: [
     BrowserModule,

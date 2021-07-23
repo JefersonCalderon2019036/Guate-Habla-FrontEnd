@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PerfilComponent} from './perfil/perfil.component';
 import { MenudenavegacionComponent } from './menudenavegacion/menudenavegacion.component';
+import { ContactanosComponent} from './contactanos/contactanos.component';
 
 const routes: Routes = [
   {path: "inicio", component: InicioComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: "registrar", component: RegisterComponent},
   {path: "perfil", component: PerfilComponent},
   {path: "menudenavegacion", component: MenudenavegacionComponent},
+  {path: "contactanos", component: ContactanosComponent},
   {path: "**", component: InicioComponent}
 ];
 
