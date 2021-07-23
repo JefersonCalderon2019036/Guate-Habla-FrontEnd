@@ -11,45 +11,63 @@ import { UsersServices } from '../servicios/user.services';
 export class MenudenavegacionComponent implements OnInit {
 
   public rol: any;
-  public verificaciondelrol: any
+  public verificaciondelrol: any;
+  public verificaciondelrol2: any;
   public token: any;
   public verificaciondeltoken: any;
   public verificaciondeltoken2: any;
+  public nombre: any;
+  public imagendemiperfil: any;
 
   constructor(
     public _usuarioService: UsersServices,
     private _router: Router) { 
     this.rol = this._usuarioService.getRol();
     this.token = this._usuarioService.getToken();
+    this.nombre = this._usuarioService.getnombre();
+    this.imagendemiperfil = this._usuarioService.getimagenperfil();
   }
 
   ngOnInit(): void {
-    this.VerificacionRol();
-    this.VerificacionToken2();
-    this.VerificacionToken();
+    this.VerificacionDelToken();
+    this.VerificacionDelToken2();
+    this.VerificacionDelRol();
+    this.VerficacionDelRol2()
   }
 
-  VerificacionRol() {
-    if("ROLE_ADMIN" == this.rol){
-      this.verificaciondelrol = true;
-    }else{
-      this.verificaciondelrol = false;
-    }
-  }
-
-  VerificacionToken() {
-    if("" == this.token){
+  VerificacionDelToken(){
+    if("" == this.rol){
       this.verificaciondeltoken = true;
     }else{
       this.verificaciondeltoken = false;
     }
   }
 
-  VerificacionToken2() {
-    if("" != this.token){
+  VerificacionDelToken2(){
+    if("" != this.rol){
       this.verificaciondeltoken2 = true;
     }else{
       this.verificaciondeltoken2 = false;
+    }
+  }
+
+  VerificacionDelRol(){
+    if("ROL_ADMIN" == this.rol){
+      this.verificaciondelrol = true;
+    }else{
+      this.verificaciondelrol = false;
+    }
+  }
+
+  VerficacionDelRol2(){
+    if("ROL_ADMIN" != this.rol){
+      if("ROL_POLI" == this.rol){
+        this.verificaciondelrol2 = true;
+      }else{
+        this.verificaciondelrol2 = false;
+      }
+    }else{
+      this.verificaciondelrol2 = true;
     }
   }
 
@@ -59,9 +77,10 @@ export class MenudenavegacionComponent implements OnInit {
     localStorage.setItem("nombre", "");
     localStorage.setItem("imagendemiperfil", "");
     localStorage.setItem("iddelusuario", "");
-    this._router.navigate(['/inicio'])
-    this.VerificacionRol();
-    this.VerificacionToken2();
-    this.VerificacionToken();
+    this._router.navigate(['/inicio']);
+    this.VerificacionDelToken();
+    this.VerificacionDelToken2();
+    this.VerificacionDelRol();
+    this.VerficacionDelRol2();
   }
 }

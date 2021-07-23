@@ -10,21 +10,43 @@
             <a class="nav-link active"  routerLink="/inicio" routerLinkActive="active">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" *ngIf="verificaciondeltoken2" routerLink="/principal" routerLinkActive="active">Principal</a>
+            <a class="nav-link active"  *ngIf="verificaciondeltoken2" routerLink="/principal" routerLinkActive="active">Principal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"  *ngIf="verificaciondeltoken2" routerLink="/inicio" routerLinkActive="active">Denunciar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"  *ngIf="verificaciondeltoken2 && verificaciondelrol2">Seguimiento de Denencias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"  *ngIf="verificaciondeltoken2 && verificaciondelrol">Usuarios</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" *ngIf="verificaciondeltoken" routerLink="/login" routerLinkActive="active">Iniciar sesión</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" *ngIf="verificaciondeltoken" routerLink="/registrar" routerLinkActive="active">Registrar</a>
+            <a class="nav-link active" *ngIf="verificaciondeltoken"  routerLink="/registrar" routerLinkActive="active">Registrar</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active"  href="#">Contactanos</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" *ngIf="verificaciondeltoken2" (click) ="cerrarsecion()" >Cerrar Sesión</a>
-          </li>
         </ul> 
+
+        <header>
+          <nav class="navegacion">
+            <ul class="menu">
+              <li><div class="" style="display: flex;"  routerLink="/principal" routerLinkActive="active">
+                <img src={{imagendemiperfil}} style="width: 50px; margin-right: 10%;">
+                <a href="#" style="color:white; text-decoration: none;">{{nombre}}</a></div>
+                <ul class="submenu" style="margin-top: 5%; background-color: black;">
+                  <li><a href="#">Mi perfil</a></li>
+                  <li><a (click) ="cerrarsecion()">Cerrar Sesión</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
       </div>
     </div>
   </nav>
