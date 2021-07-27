@@ -1,3 +1,4 @@
+  
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,12 +12,8 @@ import { RegisterComponent } from './register/register.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-<<<<<<< Updated upstream
-import { ContactanosComponent } from './contactanos/contactanos.component';
-=======
 import { DetallesnoticiasComponent } from './detallesnoticias/detallesnoticias.component';
->>>>>>> Stashed changes
-
+import { ContactanosComponent } from './contactanos/contactanos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,11 +23,8 @@ import { DetallesnoticiasComponent } from './detallesnoticias/detallesnoticias.c
     LoginComponent,
     RegisterComponent,
     PerfilComponent,
-<<<<<<< Updated upstream
+    DetallesnoticiasComponent,
     ContactanosComponent
-=======
-    DetallesnoticiasComponent
->>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

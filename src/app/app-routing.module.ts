@@ -6,11 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PerfilComponent} from './perfil/perfil.component';
 import { MenudenavegacionComponent } from './menudenavegacion/menudenavegacion.component';
-<<<<<<< Updated upstream
-import { ContactanosComponent} from './contactanos/contactanos.component';
-=======
 import { DetallesnoticiasComponent } from './detallesnoticias/detallesnoticias.component';
->>>>>>> Stashed changes
+import { ContactanosComponent } from './contactanos/contactanos.component';
 
 const routes: Routes = [
   {path: "inicio", component: InicioComponent},
