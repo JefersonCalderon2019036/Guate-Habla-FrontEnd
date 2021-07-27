@@ -7,8 +7,8 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav" style="width: 80%;">
-          <li class="nav-item">
-            <a class="nav-link active"  *ngIf="verificaciondeltoken" routerLink="/inicio" routerLinkActive="active">Inicio</a>
+          <li class="nav-item" *ngIf="verificaciondeltoken">
+            <a class="nav-link active" routerLink="/inicio" routerLinkActive="active">Inicio</a>
           </li>
           <li class="nav-item" *ngIf="verificaciondeltoken2">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAABM0lEQVQ4T72UPUoDYRCGn/cEamWptlb2Fqa2kCBY6wkkFxAUvIB4AJNWEMwJYkBs9QbGwsLKeIJXJnwJmzVxf0IysLDfMvPMvDPfjliCqQrT9rqkYVFMaajtbeAVeAQ6kp7mwatAGwm4lmADoJ0SxPvEJtBUyWmRNKAJ7OX8ouq2pE58z0KjV+MqSrBnutxIao2gtkNaL6QkSXWgEd+X1MhDryRd1iHa9kqhdYrMxsyU/wFMXY8KWQ4Wlm/7EBhKeknDXqyntp+B/aTiVtJ54aBs/7kB41th+wS4z7VlE/j6V77tO+AsEziQtJNkHgHdHHQD+C6Cxq84ZZJikYzM9gNwnI4Xkq4L5ZeZuO1d4EfS57xBxVp7LwMr8OlKamYXSguIZ6smvB/xkt5K79MqiZYC/QVT160WomrVTQAAAABJRU5ErkJggg=="/>
@@ -18,38 +18,33 @@
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAA6UlEQVQ4T8WV4RHBQBCF36tACaiADkQJKkAlpAMlRCWoABVQAhWseZmc3Jgkcjdu3Ez+5Ha/vL192SMSLCZg4g01symAQeBHniQvnzkltAKeA4EufEzy7uc6aAbgEAmdkzz+DboHULQoXwFYenu9leYkt01QM9P7TQw05Hh7K00CDS7fzOSgh3zbZik1qatRapZbZflmZgBOJLOf+TQWmlfSVObsJ0pJuqoaLRWr1P2KIwB6vp6pgm4hPvJiFwA0qZRfN6qaVNqYRIJd2ppk4c9Tqd0B0FwdBsKvsiBJ5ddDOhDSGZ7kOnkBe7GKFvCv4iIAAAAASUVORK5CYII="/>
             <a class="nav-link active" routerLink="/principal" routerLinkActive="active">Denunciar</a>
           </li>
-          <li class="nav-item" *ngIf="verificaciondeltoken2">
+          <li class="nav-item" *ngIf="verificaciondeltoken2 && verificaciondelrol2">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAA6UlEQVQ4T8WV4RHBQBCF36tACaiADkQJKkAlpAMlRCWoABVQAhWseZmc3Jgkcjdu3Ez+5Ha/vL192SMSLCZg4g01symAQeBHniQvnzkltAKeA4EufEzy7uc6aAbgEAmdkzz+DboHULQoXwFYenu9leYkt01QM9P7TQw05Hh7K00CDS7fzOSgh3zbZik1qatRapZbZflmZgBOJLOf+TQWmlfSVObsJ0pJuqoaLRWr1P2KIwB6vp6pgm4hPvJiFwA0qZRfN6qaVNqYRIJd2ppk4c9Tqd0B0FwdBsKvsiBJ5ddDOhDSGZ7kOnkBe7GKFvCv4iIAAAAASUVORK5CYII="/>
-            <a class="nav-link active"  *ngIf="verificaciondeltoken2 && verificaciondelrol2">Seguimiento de Denencias</a>
+            <a class="nav-link active">Seguimiento de Denencias</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active"  *ngIf="verificaciondeltoken2 && verificaciondelrol">Usuarios</a>
+          <li class="nav-item" *ngIf="verificaciondeltoken2 && verificaciondelrol">
+            <a class="nav-link active">Usuarios</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" *ngIf="verificaciondeltoken" routerLink="/login" routerLinkActive="active">Iniciar sesión</a>
+          <li class="nav-item" *ngIf="verificaciondeltoken">
+            <a class="nav-link active" routerLink="/login" routerLinkActive="active">Iniciar sesión</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" *ngIf="verificaciondeltoken"  routerLink="/registrar" routerLinkActive="active">Registrar</a>
+          <li class="nav-item" *ngIf="verificaciondeltoken">
+            <a class="nav-link active"  routerLink="/registrar" routerLinkActive="active">Registrar</a>
           </li>
           <li class="nav-item">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAABzElEQVQ4T7WUvU4VYRCGn/cGFG9AoLNTaCzBlgaNrYl6BUKsrCQhIbESr0CIiZUJUFGCpZXcgegNKMFEuyHvZnYzR3fZQ8E0Z/fsN883P++MuAbTtMyIWAZOJZ2O+QxCI2IOeAE8BPxc7RjYkbTbd0EvNCLWgNfAzEhUJ8BzSf7t7D9oROwAT8dSLN9/AQ8qeAKaEb69ArA9avBCW+8OmjX8OkXKQ3fuSnrmjxW6nY0Zcjpzc4D9PODmGbJUHOYdbYVaKrPAPLABWEJ+/w6422uSnOaERYTBbuxdYF3SdoUG8FmSYY1FxG1JP3pAt4A/kv7mOUf9rfVvoCnsI6CrS0S8AraAQ0kr5aJF4AvwE7gvyTAzuqBa6MRNeegT8Bg4l3SjQJ8AH/J9RdJhL7T8eSJpId/vAC+BI0kfawki4g3wW9JmX6a1pm6GO9l08CpajYhWOY8k7Veou/i+1nUacNG3WXNWyL8T5Rm2NDzP1uSoRUTr08hpQvxZm3upyZupy3dD1IxwD7DPgSRvs8b6FkoFu7YeBOu3qXPKbzWnyVvswM91MIZWnyVm2GXbymO70aZcM7p082eKTqtLzds/5/+4b2x70x/tzBQHLgDPBckWv8AFvgAAAABJRU5ErkJggg=="/>
-            <a class="nav-link active"  href="#">Contactanos</a>
+            <a class="nav-link active" routerLink="/contactanos" routerLinkActive="active">Contactanos</a>
           </li>
         </ul> 
 
-        <header >
+        <header *ngIf="verificaciondeltoken2" style="margin-left: -5%;">
           <nav class="navegacion">
             <ul class="menu">
               <li><div class="" style="display: flex;" routerLink="/principal" routerLinkActive="active">
                 <img src={{imagendemiperfil}} style="width: 50px; margin-right: 10%;">
                 <a href="#" style="color:white; text-decoration: none;">{{nombre}}</a></div>
                 <ul class="submenu" style="margin-top: 5%; background-color: black;">
-<<<<<<< Updated upstream
-                  <!--Puse redireccionamiento a perfil, revisar si contiene tiene errores-->>
-                  <li><a href="perfil">Mi perfil</a></li>
-=======
                   <li><a routerLink="/perfil" routerLinkActive="active">Mi perfil</a></li>
->>>>>>> Stashed changes
                   <li><a (click) ="cerrarsecion()">Cerrar Sesión</a></li>
                 </ul>
               </li>

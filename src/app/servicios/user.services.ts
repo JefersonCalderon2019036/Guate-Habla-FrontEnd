@@ -30,6 +30,12 @@ import { serviciosglobales } from './rutaglobal.services';
         return this._http.post(this.url + 'register', params, {headers: this.encabezadosintoken});
     }
 
+
+    //funcion para ver mi perfil
+    MiPerfil(): Observable<any>{
+      return this._http.get(this.url + "getUserId/"+this.getId(), {headers: this.encabezadocontoken})
+    }
+
      //funcion para obtener el token desde el localStorage
      getToken(){
       var token2 = localStorage.getItem('token');
