@@ -1,25 +1,48 @@
 body{
-    background-image: url(https://i.pinimg.com/originals/0b/b8/7a/0bb87a7e4573405c8a42e0e937471f77.jpg);
+    background: rgba(34, 34, 34, 0.76);
     background-size: cover;
+    
 }
 
 .GuateHablaLogo{
-    width: 30%;
-    margin-left: 35%;
-    margin-top: 13.5%;
-    margin-bottom: 23%;
-    border-radius: 50%;
-    box-shadow: 2px 2px white;
+    top: 2%;
+    left:12%;
+    width: 20%;
+    height:40%;
+    border-radius: 5px;
+    position:relative;
+    
+
+}
+.GuateHablaLogo1{
+    top: 2%;
+    left:23%;
+    width: 20%;
+    height:40%;
+    border-radius: 5px;
+    position:relative;
+    
+
+}
+.GuateHablaLogo2{
+    top: 2%;
+    left:32%;
+    width: 20%;
+    height:40%;
+    border-radius: 5px;
+    position:relative;
+    
+
 }
 
 .btn-neon{
-    position: absolute;
-    margin-top: 45%;
-    margin-left: -21%;
-    background-color: black;
+    top: 10%;
+    left: 48%;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.979);
     border-radius: 5%;
     display: inline-block;
-    padding: 15px 30px;
+    padding: auto;
     color: #fff;
     letter-spacing: 4px;
     text-decoration: none;
@@ -83,3 +106,68 @@ body{
     transition: 1s;
     transition-delay: 0.75s;
 }
+.principal{
+    background: url(https://upload.wikimedia.org/wikipedia/commons/6/6f/Palacio_De_Gobierno_De_Guatemala_%28243091369%29.jpeg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+section{
+    height:90%;
+    width: 100%;
+    padding: auto;
+    position: absolute;
+}
+
+
+
+.contenido{
+    position: relative;
+    width: 80%;
+    height: 60%;
+color: rgb(0, 0, 0);
+transform: translate(15%, 1%);
+background:rgba(255, 255, 255, 0.774);
+font-size:90%;
+border: 2px solid #FFFFFF;
+box-sizing: border-box;
+}
+
+.contenido h3{
+    top: 1%;
+    left: 1%;
+    margin: auto;
+    padding: auto;
+    text-align: center !important;
+    letter-spacing: 2px;
+    display: inline-block;
+    position: relative;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 10px;
+    box-sizing: border-box;
+  }
+
+  .contenido h1{
+    top: 1%;
+    left: 1%;
+    margin: auto;
+    padding: auto;
+    text-align: left;
+    display: inline-block;
+    position: relative;
+    font-family: 'Open sans';
+    box-sizing: border-box;
+  }
+
+
+.contenido p{
+    top: 9%;
+    left: 1%;
+    margin: auto;
+    padding: auto;
+    text-align: left;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    display: inline-block;
+    position: relative;
+  }
+
