@@ -5,33 +5,32 @@ body{
 }
 
 .GuateHablaLogo{
-    top: 2%;
+    top: -2%;
     left:12%;
     width: 20%;
     height:40%;
     border-radius: 5px;
     position:relative;
-    
-
+    z-index: 4;
 }
 .GuateHablaLogo1{
-    top: 2%;
+    top: -2%;
     left:23%;
     width: 20%;
     height:40%;
     border-radius: 5px;
     position:relative;
-    
+    z-index: 4;
 
 }
 .GuateHablaLogo2{
-    top: 2%;
+    top: -2%;
     left:32%;
     width: 20%;
     height:40%;
     border-radius: 5px;
     position:relative;
-    
+    z-index: 4;
 
 }
 
@@ -110,12 +109,24 @@ body{
     background: url(https://upload.wikimedia.org/wikipedia/commons/6/6f/Palacio_De_Gobierno_De_Guatemala_%28243091369%29.jpeg) no-repeat;
     background-size: cover;
     background-position: center;
+    top: 108%;
 }
+.principal:before {
+    content: "";
+    background: rgba(5, 13, 24, 0.3);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
 section{
-    height:90%;
+    height:100%;
     width: 100%;
     padding: auto;
     position: absolute;
+    z-index:4;
 }
 
 
@@ -124,12 +135,12 @@ section{
     position: relative;
     width: 80%;
     height: 60%;
-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
 transform: translate(15%, 1%);
-background:rgba(255, 255, 255, 0.774);
+background:transparent;
 font-size:90%;
-border: 2px solid #FFFFFF;
 box-sizing: border-box;
+z-index: 4;
 }
 
 .contenido h3{
@@ -144,6 +155,7 @@ box-sizing: border-box;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 10px;
     box-sizing: border-box;
+    z-index: 4;
   }
 
   .contenido h1{
@@ -156,6 +168,7 @@ box-sizing: border-box;
     position: relative;
     font-family: 'Open sans';
     box-sizing: border-box;
+    z-index: 4;
   }
 
 
@@ -169,5 +182,69 @@ box-sizing: border-box;
     letter-spacing: 1px;
     display: inline-block;
     position: relative;
+    z-index:4;
   }
 
+  #hero {
+    width: 100%;
+    height: 100vh;
+    background: url("https://ak.picdn.net/shutterstock/videos/18150820/thumb/1.jpg") top center;
+    background-size: cover;
+  }
+  
+  #hero:before {
+    content: "";
+    background: rgba(5, 13, 24, 0.3);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  
+  #hero .hero-container {
+    position: relative;
+    z-index: 2;
+    min-width: 300px;
+  }
+  
+  #hero h1 {
+    margin: 0 0 10px 0;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #fff;
+  }
+  
+  #hero p {
+    color: #fff;
+    margin-bottom: 50px;
+    font-size: 26px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #hero p span {
+    color: #fff;
+    padding-bottom: 4px;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #149ddd;
+  }
+  
+  @media (min-width: 1024px) {
+    #hero {
+      background-attachment: fixed;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #hero h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+    #hero h2 {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+  }
