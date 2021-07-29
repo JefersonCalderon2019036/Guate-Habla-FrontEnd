@@ -27,7 +27,7 @@ import { serviciosglobales } from './rutaglobal.services';
     //funcion para registrar
     registrar(usuario: usuarios): Observable<any>{
         let params = JSON.stringify(usuario);
-        return this._http.post(this.url + 'register', params, {headers: this.encabezadosintoken});
+        return this._http.post(this.url + 'register', params, {headers: this.encabezadosintoken})
     }
 
     //funcion para ver mi perfil
@@ -38,7 +38,11 @@ import { serviciosglobales } from './rutaglobal.services';
      //funcion para editar mi perfil
      editarperfil(usuario: usuarios): Observable<any>{
       let params = JSON.stringify(usuario);
-      return this._http.put(this.url + 'userUpdate/' + this.getId() , params, {headers: this.encabezadocontoken});
+      return this._http.put(this.url + 'userUpdate/' + this.getId() , params, {headers: this.encabezadocontoken})
+    }
+
+    eliminarmiperfil(): Observable<any>{
+      return this._http.delete(this.url + "userDelete/" + this.getId(), {headers: this.encabezadocontoken})
     }
 
      //funcion para obtener el token desde el localStorage

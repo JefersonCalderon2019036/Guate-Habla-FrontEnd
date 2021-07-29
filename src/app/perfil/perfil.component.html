@@ -64,7 +64,7 @@
             <label class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#EditarModal"for="btnradio1">Editar</label>
           
             <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btnradio2">Eliminar</label>
+            <label class="btn btn-outline-primary" (click)="eliminarmiperfil()" for="btnradio2">Eliminar</label>
           </div>
         </div>
     </section>
@@ -79,18 +79,37 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <!-- NOMBRES -->
-        <label for="Usuario">Nombre<span class="text-danger">*</span></label>
-        <input type="text" required="" placeholder="Primer Nombre" name="name" #name="ngModel" [(ngModel)]="usuarioModel.name">  
-        <label for="Usuario">Nombre usuario<span class="text-danger">*</span></label>
-        <input type="text" required="" placeholder="Nombre de usuario" name="user" #user="ngModel" [(ngModel)]="usuarioModel.user">  
-        <label for="Usuario">Dirección<span class="text-danger">*</span></label>
-        <input type="text" required="" placeholder="Dirección" name="direccion" #direccion="ngModel" [(ngModel)]="usuarioModel.direccion">
-        <label for="Usuario">Telefono<span class="text-danger">*</span></label>
-        <input type="text" required="" placeholder="0" name="telefono" #telefono="ngModel" [(ngModel)]="usuarioModel.telefono">
-        <!---correo elctronico-->
-        <label for="Usuario">Correo Electronico<span class="text-danger">*</span></label>
-        <input type="text" required="" placeholder="Ingrese un correo electronico" name="email" #email="ngModel" [(ngModel)]="usuarioModel.email">
+        
+        <div style="display: flex;">
+          <label for="" style="margin-right: 5%; width: 15%">Nombre</label>
+          <input type="text" placeholder="Nombre" name="name" #name="ngModel" [(ngModel)]="usuarioModel.name" style="margin-right: 5%; width: 75%">
+         </div>
+
+         <div style="display: flex;">
+          <label for="" style="margin-right: 5%; width: 40%">Nombre de usuario</label>
+          <input type="text" placeholder="Nombre de usuario" name="user" #user="ngModel" [(ngModel)]="usuarioModel.user" style="margin-right: 5%; width: 75%">
+         </div>
+
+         <div style="display: flex;">
+          <label for="" style="margin-right: 5%; width: 15%">Correo</label>
+          <input type="text"  placeholder="Ingrese un correo electronico" name="email" #email="ngModel" [(ngModel)]="usuarioModel.email" style="margin-right: 5%; width: 75%">
+         </div>
+
+         <div style="display: flex;">
+          <label for="" style="margin-right: 5%; width: 15%">Dirección</label>
+          <input type="text" placeholder="Dirección" name="direccion" #direccion="ngModel" [(ngModel)]="usuarioModel.direccion" style="margin-right: 5%; width: 75%">
+         </div>
+
+         <div style="display: flex;">
+          <label for="" style="margin-right: 5%; width: 15%">Telefono</label>
+          <input minlength="8" maxlength="8" type="text" placeholder="0" name="telefono" #telefono="ngModel" [(ngModel)]="usuarioModel.telefono" style="margin-right: 5%; width: 75%">
+         </div>
+
+         <div style="display: flex;">
+          <label for="" style="margin-right: 5%; width: 15%">Imagen</label>
+          <input type="text" placeholder="URL de la imagen" name="img" #img="ngModel" [(ngModel)]="usuarioModel.img" style="margin-right: 5%; width: 75%">
+         </div>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>

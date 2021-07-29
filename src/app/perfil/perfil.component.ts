@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { usuarios } from '../modelos/user.modelos';
 import { UsersServices } from '../servicios/user.services';
+import { MenudenavegacionComponent } from '../menudenavegacion/menudenavegacion.component'
 
 @Component({
   selector: 'app-perfil',
@@ -15,6 +17,7 @@ export class PerfilComponent implements OnInit {
 
   constructor(
     private _usuarioService: UsersServices,
+    private _router: Router
   ) { 
     this.usuarioModel  = new usuarios("","","","","","","","",0,"","")
   }
@@ -43,4 +46,22 @@ export class PerfilComponent implements OnInit {
       }
     )
   }
+
+  eliminarmiperfil(){
+    this._usuarioService.eliminarmiperfil().subscribe(
+      (response) => {
+        console.log(response)
+        localStorage.setItem('token', "");
+        localStorage.setItem('Rol', "");
+        localStorage.setItem("nombre", "");
+        localStorage.setItem("imagendemiperfil", "");
+        localStorage.setItem("iddelusuario", "");
+        localStorage.setItem("IdSoloUnaNoticia", "");
+        this._router.navigate(['/inicio']);
+      }, (error) => {
+        console.log(<any>error)
+      }
+    )
+  }
 }
+
