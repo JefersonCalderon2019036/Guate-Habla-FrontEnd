@@ -32,7 +32,7 @@ body:before {
     box-sizing: border-box;
     padding: 70px 30px;
     border-radius: 2%;
-z-index: 4;
+z-index: 2;
   }
   .contenedor .subtitulo-inicio {
     text-align: center;
@@ -42,7 +42,7 @@ z-index: 4;
     color: #ffffff;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     position: relative;
-    z-index: 4;
+    z-index: 2;
   }
   
   .contenedor .titulo-inicio {
@@ -53,7 +53,7 @@ z-index: 4;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #ffffff;
     position: relative;
-    z-index: 4;
+    z-index: 2;
   }
   .contacto label {
     margin: 0;

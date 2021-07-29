@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ContactanosComponent } from './contactanos/contactanos.component';
 import { DetallesnoticiasComponent } from './detallesnoticias/detallesnoticias.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DetallesnoticiasComponent } from './detallesnoticias/detallesnoticias.c
     RegisterComponent,
     PerfilComponent,
     ContactanosComponent,
-    DetallesnoticiasComponent
+    DetallesnoticiasComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,

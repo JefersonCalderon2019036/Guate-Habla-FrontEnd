@@ -19,7 +19,7 @@
         <label for="Usuario">Dirección<span class="text-danger">*</span></label>
         <input type="text" required="" placeholder="Dirección" name="direccion" #direccion="ngModel" [(ngModel)]="usuarioModel.direccion">
         <label for="Usuario">Telefono<span class="text-danger">*</span></label>
-        <input type="text" required="" placeholder="0" name="telefono" #telefono="ngModel" [(ngModel)]="usuarioModel.telefono">
+        <input minlength="8" maxlength="8" type="text" required="" placeholder="0" name="telefono" #telefono="ngModel" [(ngModel)]="usuarioModel.telefono">
 <!--CUI-->
         <label for="Usuario">CUI<span class="text-danger">*</span></label>
         <input minlength="13" maxlength="13" type="text" required="" pattern="[1-9]+" placeholder="Ingrese los 13 digitos de su DPI" name="dpi" #dpi="ngModel" [(ngModel)]="usuarioModel.dpi">            

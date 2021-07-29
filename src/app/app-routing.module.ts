@@ -8,7 +8,7 @@ import { PerfilComponent} from './perfil/perfil.component';
 import { MenudenavegacionComponent } from './menudenavegacion/menudenavegacion.component';
 import { ContactanosComponent} from './contactanos/contactanos.component';
 import { DetallesnoticiasComponent } from './detallesnoticias/detallesnoticias.component';
-
+import { UsuariosComponent } from './usuarios/usuarios.component';
 const routes: Routes = [
   {path: "inicio", component: InicioComponent},
   {path: "principal", component: PrincipalComponent},
@@ -18,6 +18,7 @@ const routes: Routes = [
   {path: "detallesnoticias", component: DetallesnoticiasComponent},
   {path: "menudenavegacion", component: MenudenavegacionComponent},
   {path: "contactanos", component: ContactanosComponent},
+  {path:"usuarios", component:UsuariosComponent},
   {path: "**", component: InicioComponent}
 ];
 
