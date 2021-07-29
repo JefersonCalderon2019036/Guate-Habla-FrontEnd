@@ -35,6 +35,9 @@ import { serviciosglobales } from './rutaglobal.services';
       return this._http.get(this.url + "getUserId/" + this.getId(), {headers: this.encabezadocontoken})
     }
 
+    vertodoslosusuariosadmin(): Observable<any>{
+      return this._http.get(this.url + "getUserIdAdmin/" + this.getId(), {headers: this.encabezadocontoken})
+    }
      //funcion para editar mi perfil
      editarperfil(usuario: usuarios): Observable<any>{
       let params = JSON.stringify(usuario);

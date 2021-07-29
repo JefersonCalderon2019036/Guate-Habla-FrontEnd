@@ -40,7 +40,6 @@ export class PerfilComponent implements OnInit {
     this._usuarioService.editarperfil(this.usuarioModel).subscribe(
       (response) => {
         console.log(response)
-        this.VerMiPerfil();
       }, (error) => {
         console.log(<any>error)
       }

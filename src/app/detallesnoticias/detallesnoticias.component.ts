@@ -15,10 +15,13 @@ export class DetallesnoticiasComponent implements OnInit {
   public verificaciondelrol: any;
   public rol: any;
   public iduser: any;
+  public nameuser: any;
   public NoticiaModel: noticias;
   public solounanoticia: any;
   public Comentarios: any;
   public desabilitaralertas: any;
+  public modaleditar: any;
+  public textcomentario: string | undefined;
 
   constructor(
     public _usuarioService: UsersServices,
@@ -26,7 +29,8 @@ export class DetallesnoticiasComponent implements OnInit {
     private _router: Router
   ) { 
     this.rol = this._usuarioService.getRol();
-    this.iduser = this._usuarioService.getId;
+    this.iduser = this._usuarioService.getId();
+    this.nameuser = this._usuarioService.getnombre();
     this.NoticiaModel = new noticias("","","","","", [{ userIdComentario: "",username: "", descripcionComentario: ""}])
   }
 
@@ -57,5 +61,9 @@ export class DetallesnoticiasComponent implements OnInit {
 
   cerrar(){
     this.desabilitaralertas = false;
+  }
+
+  AgregarComentario(){
+    
   }
 }
