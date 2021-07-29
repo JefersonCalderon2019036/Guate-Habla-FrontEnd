@@ -18,6 +18,7 @@ export class MenudenavegacionComponent implements OnInit {
   public verificaciondeltoken2: any;
   public nombre: any;
   public imagendemiperfil: any;
+  static cerrarsecion: any;
 
   constructor(
     public _usuarioService: UsersServices,
