@@ -10,11 +10,11 @@ import { UsersServices } from '../servicios/user.services';
 })
 export class PerfilComponent implements OnInit {
 
-  public usuarioModel : usuarios;
   public MiUsuario : any;
+  public usuarioModel : usuarios;
 
   constructor(
-    private _usuarioService: UsersServices
+    private _usuarioService: UsersServices,
   ) { 
     this.usuarioModel  = new usuarios("","","","","","","","",0,"","")
   }
@@ -33,10 +33,11 @@ export class PerfilComponent implements OnInit {
     )
   }
 
-  EditarMiPerfil(){
-    this._usuarioService.EditarMiPerfil(this.usuarioModel).subscribe(
+  editarperfil(){
+    this._usuarioService.editarperfil(this.usuarioModel).subscribe(
       (response) => {
         console.log(response)
+        this.VerMiPerfil();
       }, (error) => {
         console.log(<any>error)
       }
