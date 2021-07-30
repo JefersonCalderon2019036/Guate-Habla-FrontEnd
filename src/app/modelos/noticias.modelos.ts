@@ -7,6 +7,7 @@ export class noticias {
         public img: String,
         public comentarios: [{
             userIdComentario: string,
+            username: String,
             descripcionComentario: String
         }]
     ){}

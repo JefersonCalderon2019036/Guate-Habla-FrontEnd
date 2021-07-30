@@ -24,7 +24,7 @@ export class PrincipalComponent implements OnInit {
     private _router: Router
   ) { 
     this.rol = this._usuarioService.getRol();
-    this.NoticiaModel = new noticias("","","","","", [{ userIdComentario: "", descripcionComentario: ""}])
+    this.NoticiaModel = new noticias("","","","","", [{ userIdComentario: "",username: "", descripcionComentario: ""}])
   }
 
   ngOnInit(): void {

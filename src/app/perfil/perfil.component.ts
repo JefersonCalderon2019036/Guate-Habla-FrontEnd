@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { usuarios } from '../modelos/user.modelos';
 import { UsersServices } from '../servicios/user.services';
+import { MenudenavegacionComponent } from '../menudenavegacion/menudenavegacion.component'
 
 @Component({
   selector: 'app-perfil',
@@ -10,11 +12,12 @@ import { UsersServices } from '../servicios/user.services';
 })
 export class PerfilComponent implements OnInit {
 
-  public usuarioModel : usuarios;
   public MiUsuario : any;
+  public usuarioModel : usuarios;
 
   constructor(
-    private _usuarioService: UsersServices
+    private _usuarioService: UsersServices,
+    private _router: Router
   ) { 
     this.usuarioModel  = new usuarios("","","","","","","","",0,"","")
   }
@@ -33,8 +36,8 @@ export class PerfilComponent implements OnInit {
     )
   }
 
-  EditarMiPerfil(){
-    this._usuarioService.EditarMiPerfil(this.usuarioModel).subscribe(
+  editarperfil(){
+    this._usuarioService.editarperfil(this.usuarioModel).subscribe(
       (response) => {
         console.log(response)
       }, (error) => {
@@ -42,4 +45,22 @@ export class PerfilComponent implements OnInit {
       }
     )
   }
+
+  eliminarmiperfil(){
+    this._usuarioService.eliminarmiperfil().subscribe(
+      (response) => {
+        console.log(response)
+        localStorage.setItem('token', "");
+        localStorage.setItem('Rol', "");
+        localStorage.setItem("nombre", "");
+        localStorage.setItem("imagendemiperfil", "");
+        localStorage.setItem("iddelusuario", "");
+        localStorage.setItem("IdSoloUnaNoticia", "");
+        this._router.navigate(['/inicio']);
+      }, (error) => {
+        console.log(<any>error)
+      }
+    )
+  }
 }
+

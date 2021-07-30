@@ -12,15 +12,36 @@
         </div>
         <hr style="color:white; margin-left: 10%; margin-right: 10%;">
         <p style="color:white; margin-left: 10%; margin-right: 10%;">{{solounanoticia.descripcion}}</p>
-        <br>
+
         <hr style="color:white; margin-left: 10%; margin-right: 10%;">
+
         <div style="display: flex;">
-            <h5 style="color:white; width: 55%; margin-left: 10%; margin-right: 10%;">Comentarios</h5>
-            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                <button type="button" class="btn btn-success">Agregar Comentario</button>
+            <h5 style="color:white; width: 40%; margin-left: 10%; margin-top: 1%;">Comentarios</h5>
+            <div class="input-group mb-3" style="width: 40%; margin-top: 0.5%">
+                <input  type="text" class="form-control" placeholder="Agregar comentario" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <button type="button" class="btn btn-success input-group-text" id="basic-addon2">Enviar</button>
             </div>
         </div>
         <hr style="color:white; margin-left: 10%; margin-right: 10%;">
+        <div *ngFor="let com of Comentarios">
+            <div class="card" style=" margin-top: 5%; background-color: black; border-color: white;width: 80%; margin-left: 10%; margin-right: 10%;">
+                <div class="card-header" style="background-color: #e4eeee;">
+                    <label for="" style="color: black; border-color: white; width: 93%; ">{{com.username}}</label>
+                    <img (click)="VerificacionId( com._id)" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAN1JREFUSEvFlO0NwjAMBa8bwCQwAkzCKjACE8EIsAkbgJ6USKEkdj5a0T+V2vQufnY6sfI1rcxnRLABToDuV+CV22yvQNAbsA/QB3DMSXoEKfwZBDsgK2kVzOGHILgDklyAcxpVi6AUi3gxrm6BFYsE6oXiUkVfza6pwItFgixcLzxBDq4dlp7/TKolGIZbFSwCLwkWg5cEOjCa6bRx1ZnPm5DrwTss2oaR64aXKogCyYfgniCttjjn3u/eiih+2w2vOWjeBt333kl2Ad6Cmog8hjmZfxG07thcv3oPPg35Shmq75wnAAAAAElFTkSuQmCC"/>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAZNJREFUSEu9lY0xBGEQRN9lIANEgAiQAREgAkSCCBABIkAEyIAMZEA99c3V7Nz+nCpnqrbqdneue7pnvtkZK47ZivFZhuAY2AW222VNr+26Bx7GihwjOAAugI0Jle/AOSDZQgwRXAKnLfsD8P6pVe1j1ewBZ8B6yzNHok70EWRw/+D9WEiiUuOqkc7zK4G23LW3O6niqVlQ0UtLOsx2VQL9VHKtfA34LCz1WSgRYzNyM4HTcg3oeW7sDbAF7CcSwR+bwpNEHAXOVWQCgY5K9QLZXAkcTUkMwbXlrTU71IWKW8CCO+dAAIGq95UkpqiCx3N7IZY4HYKvVl3fZGUS0/rAw6kOTgabIghbBAq7auN9N0gwZlH2XJDck0wS46pCf3csGmpybaj/q41fqslxyDpzDEgcqyGAoieq/pmWFqNjas5fHLTOOfr3VaGKvOw8OC6wsfjVsgugTKJt3j+Xde1HSPBYKwubtE5RrdKmCxz7fkiFnkv0qw9OBpPIy0ly/uMkO0GC9gIHwDLf5IkWjL9eOcE3/8xyGRxL0ikAAAAASUVORK5CYII="/>
+                </div>
+                <div class="card-body">
+                  <p class="card-text" style="color: white;">
+                    {{com.descripcionComentario}}
+                  </p>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="desabilitaralertas" class="alert alert-warning" role="alert" style="border-color: white;position: fixed;width: 80%;top: 90%;left: 18%;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASVJREFUSEu1leERATEQhb+rgA7QgRKoAB3QgQ7QgQ4oQQeUoAQ6oALmzVxMrOQuyY38Me6S9+2+3dtU/HlVf9bHAibAARgWgm/ACri48xagDYNCcXdMGqMY4NVR/EfXZhAC7IA10DPwJ7AHNoGgPrptAIlvgXHtq4NIXPW61u8tJBnwAKa1kIMoYCeuZ2egb7JIBuicheiZIo+J630WwEL0v0m8COB77gDqdVv4oi7yxRW5b1EMkmyRFVdBtWzhbSbJgBOwCHjuF157Zl26SAJqS9uKgsiieZcPrXRyRC1SVLHOSIXd/WkcGtfHDhNV4sumcR2K0s4ht8d+G8EMU2+0pmHXaF0qQCJKXbedlm4tWdm6cgAOot8k8a+h1BpK4YbcDLIxb/mURxnr5uQ2AAAAAElFTkSuQmCC"/>
+            <label for="" style="width: 95%;"> Solo puedes editar tu propio comentario</label>
+            <img (click)="cerrar()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAZNJREFUSEu9lY0xBGEQRN9lIANEgAiQAREgAkSCCBABIkAEyIAMZEA99c3V7Nz+nCpnqrbqdneue7pnvtkZK47ZivFZhuAY2AW222VNr+26Bx7GihwjOAAugI0Jle/AOSDZQgwRXAKnLfsD8P6pVe1j1ewBZ8B6yzNHok70EWRw/+D9WEiiUuOqkc7zK4G23LW3O6niqVlQ0UtLOsx2VQL9VHKtfA34LCz1WSgRYzNyM4HTcg3oeW7sDbAF7CcSwR+bwpNEHAXOVWQCgY5K9QLZXAkcTUkMwbXlrTU71IWKW8CCO+dAAIGq95UkpqiCx3N7IZY4HYKvVl3fZGUS0/rAw6kOTgabIghbBAq7auN9N0gwZlH2XJDck0wS46pCf3csGmpybaj/q41fqslxyDpzDEgcqyGAoieq/pmWFqNjas5fHLTOOfr3VaGKvOw8OC6wsfjVsgugTKJt3j+Xde1HSPBYKwubtE5RrdKmCxz7fkiFnkv0qw9OBpPIy0ly/uMkO0GC9gIHwDLf5IkWjL9eOcE3/8xyGRxL0ikAAAAASUVORK5CYII="/>
+          </div>
         <br>
     </div>
     <br>

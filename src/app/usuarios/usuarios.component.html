@@ -5,7 +5,36 @@
 </div>
 <div class="container">
  <h1 style="text-align:center; color:rgb(255, 255, 255);top:1%;position: relative;">Usuarios</h1>
- 
+ <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">DPI</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Correo Electronico</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Rol</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usua of usuarios">
+            <th scope="row">{{ usua.dpi }}</th>
+            <td>{{ usua.name }}</td>
+            <td>{{ usua.email }}</td>
+            <td>{{ usua.direccion }}</td>
+            <td>{{ usua.telefono }}</td>
+            <td>{{ usua.rol }}</td>
+            <td>
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-danger">Eliminar</button>
+                    <button type="button" class="btn btn-warning">Editar</button>
+                    <button type="button" class="btn btn-success">ver</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 </div>
 
 </body>
