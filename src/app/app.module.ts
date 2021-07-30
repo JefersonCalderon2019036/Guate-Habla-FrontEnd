@@ -14,6 +14,9 @@ import { FormsModule } from '@angular/forms';
 import { ContactanosComponent } from './contactanos/contactanos.component';
 import { DetallesnoticiasComponent } from './detallesnoticias/detallesnoticias.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { DenunciarComponent } from './denunciar/denunciar.component';
+import { ScriptsService } from './scripts.service';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     PerfilComponent,
     ContactanosComponent,
     DetallesnoticiasComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    DenunciarComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    ScriptsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

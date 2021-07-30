@@ -224,6 +224,13 @@ z-index: 4;
     font-family: "Poppins", sans-serif;
   }
   
+  #hero p span {
+    color: #fff;
+    padding-bottom: 4px;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #149ddd;
+  }
+  
   @media (min-width: 1024px) {
     #hero {
       background-attachment: fixed;
@@ -240,4 +247,4 @@ z-index: 4;
       line-height: 24px;
       margin-bottom: 30px;
     }
-  }
+  }  

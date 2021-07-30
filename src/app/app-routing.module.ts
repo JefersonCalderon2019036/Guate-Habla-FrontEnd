@@ -9,6 +9,7 @@ import { MenudenavegacionComponent } from './menudenavegacion/menudenavegacion.c
 import { ContactanosComponent} from './contactanos/contactanos.component';
 import { DetallesnoticiasComponent } from './detallesnoticias/detallesnoticias.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import{ DenunciarComponent} from './denunciar/denunciar.component';
 const routes: Routes = [
   {path: "inicio", component: InicioComponent},
   {path: "principal", component: PrincipalComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: "menudenavegacion", component: MenudenavegacionComponent},
   {path: "contactanos", component: ContactanosComponent},
   {path:"usuarios", component:UsuariosComponent},
+  {path:"denunciar", component:DenunciarComponent},
   {path: "**", component: InicioComponent}
 ];
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ScriptsService } from "./../scripts.service"
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  constructor( private _CargaScripts:ScriptsService)
+   {
+     _CargaScripts.Carga(["inicio/inicio"]);
+    }
 
   ngOnInit(): void {
   }
