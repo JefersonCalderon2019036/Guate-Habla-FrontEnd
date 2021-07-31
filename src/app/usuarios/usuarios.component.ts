@@ -13,6 +13,7 @@ export class UsuariosComponent implements OnInit {
   public unsolousuario: any;
   public idusuarioadmin: any;
   public usuarioModel : usuarios;
+  public arrayuser2 = {name: "",user: "", email: "", direccion: "",telefono: 0}
 
   constructor(
     private _usuarioService: UsersServices
@@ -61,8 +62,8 @@ export class UsuariosComponent implements OnInit {
   }
 
   editarperfildeusuarioconelrolpolicia(){
-    this.usuarioModel.rol = "ROL_POLI"
-    this._usuarioService.EditarUsuarioid(this.usuarioModel).subscribe(
+    let arrayuser = { rol: "ROL_POLI", estado: "DISPONIBLE"}
+    this._usuarioService.editarUsaurio(arrayuser).subscribe(
       (response) => {
         console.log(response)
         this.VerTodosLosUsuariosAdmin();
@@ -74,8 +75,8 @@ export class UsuariosComponent implements OnInit {
   }
 
   editarperfilusuarioroladmin(){
-    this.usuarioModel.rol = "ROL_ADMIN"
-    this._usuarioService.EditarUsuarioid(this.usuarioModel).subscribe(
+    let arrayuser = { rol: "ROL_ADMIN", estado: "DISPONIBLE"}
+    this._usuarioService.editarUsaurio(arrayuser).subscribe(
       (response) => {
         console.log(response)
         this.VerTodosLosUsuariosAdmin();
@@ -87,8 +88,8 @@ export class UsuariosComponent implements OnInit {
   }
 
   editarperfilusuariorolusuario(){
-    this.usuarioModel.rol = "ROL_USUARIO"
-    this._usuarioService.EditarUsuarioid(this.usuarioModel).subscribe(
+    let arrayuser = { rol: "ROL_USUARIOS", estado: "DISPONIBLE"}
+    this._usuarioService.editarUsaurio(arrayuser).subscribe(
       (response) => {
         console.log(response)
         this.VerTodosLosUsuariosAdmin();
@@ -98,4 +99,328 @@ export class UsuariosComponent implements OnInit {
       }
     )
   }
+
+  editarinformacionusuario(){
+    if(
+      this.arrayuser2.name == "",
+      this.arrayuser2.user == "",
+      this.arrayuser2.email == "",
+      this.arrayuser2.telefono == 0,
+      this.arrayuser2.direccion == ""
+    ){
+      console.log("No existen datos para actualizar")
+    }else{
+
+    
+      if(
+        this.arrayuser2.name == "",
+        this.arrayuser2.user == "",
+        this.arrayuser2.email == "",
+        this.arrayuser2.telefono == 0,
+        this.arrayuser2.direccion != ""
+      ){
+        let arrayuser = { direccion: this.arrayuser2.direccion }
+
+          this._usuarioService.editarUsaurio(arrayuser ).subscribe(
+            (response) => {
+              console.log(response)
+              this.VerTodosLosUsuariosAdmin();
+              this.obtenerUsuarioId(this.idusuarioadmin);
+            }, (error) => {
+              console.log(<any>error)
+            }
+          )
+      }else{
+        if(
+          this.arrayuser2.name == "",
+          this.arrayuser2.user == "",
+          this.arrayuser2.email == "",
+          this.arrayuser2.telefono != 0,
+          this.arrayuser2.direccion != ""
+        ){
+          let arrayuser = { direccion: this.arrayuser2.direccion, telefono: this.arrayuser2.telefono }
+
+          this._usuarioService.editarUsaurio(arrayuser).subscribe(
+            (response) => {
+              console.log(response)
+              this.VerTodosLosUsuariosAdmin();
+              this.obtenerUsuarioId(this.idusuarioadmin);
+            }, (error) => {
+              console.log(<any>error)
+            }
+          )
+        }else{
+          if(
+            this.arrayuser2.name == "",
+            this.arrayuser2.user == "",
+            this.arrayuser2.email == "",
+            this.arrayuser2.telefono != 0,
+            this.arrayuser2.direccion == ""
+          ){
+            let arrayuser = {telefono: this.arrayuser2.telefono }
+
+          this._usuarioService.editarUsaurio(arrayuser).subscribe(
+            (response) => {
+              console.log(response)
+              this.VerTodosLosUsuariosAdmin();
+              this.obtenerUsuarioId(this.idusuarioadmin);
+            }, (error) => {
+              console.log(<any>error)
+            }
+          )
+          }else{
+            if(
+              this.arrayuser2.name == "",
+              this.arrayuser2.user == "",
+              this.arrayuser2.email != "",
+              this.arrayuser2.telefono != 0,
+              this.arrayuser2.direccion != ""
+            ){
+              let arrayuser = { email: this.arrayuser2.email, direccion: this.arrayuser2.direccion, telefono: this.arrayuser2.telefono }
+
+              this._usuarioService.editarUsaurio(arrayuser).subscribe(
+                (response) => {
+                  console.log(response)
+                  this.VerTodosLosUsuariosAdmin();
+                  this.obtenerUsuarioId(this.idusuarioadmin);
+                }, (error) => {
+                  console.log(<any>error)
+                }
+              )
+            }else{
+              if(
+                this.arrayuser2.name == "",
+                this.arrayuser2.user == "",
+                this.arrayuser2.email != "",
+                this.arrayuser2.telefono != 0,
+                this.arrayuser2.direccion == ""
+              ){
+                let arrayuser = { email: this.arrayuser2.email, telefono: this.arrayuser2.telefono }
+
+                this._usuarioService.editarUsaurio(arrayuser).subscribe(
+                  (response) => {
+                    console.log(response)
+                    this.VerTodosLosUsuariosAdmin();
+                    this.obtenerUsuarioId(this.idusuarioadmin);
+                  }, (error) => {
+                    console.log(<any>error)
+                  }
+                )
+              }else{
+                if(
+                  this.arrayuser2.name == "",
+                  this.arrayuser2.user == "",
+                  this.arrayuser2.email != "",
+                  this.arrayuser2.telefono == 0,
+                  this.arrayuser2.direccion == ""
+                ){
+                  let arrayuser = { email: this.arrayuser2.email}
+
+                this._usuarioService.editarUsaurio(arrayuser).subscribe(
+                  (response) => {
+                    console.log(response)
+                    this.VerTodosLosUsuariosAdmin();
+                    this.obtenerUsuarioId(this.idusuarioadmin);
+                  }, (error) => {
+                    console.log(<any>error)
+                  }
+                )
+                }else{
+                  if(
+                    this.arrayuser2.name == "",
+                    this.arrayuser2.user != "",
+                    this.arrayuser2.email != "",
+                    this.arrayuser2.telefono != 0,
+                    this.arrayuser2.direccion != ""
+                  ){
+                    let arrayuser = { user: this.arrayuser2.user,
+                                      email: this.arrayuser2.email,
+                                      telefono: this.arrayuser2.telefono,
+                                      direccion: this.arrayuser2.direccion}
+
+                    this._usuarioService.editarUsaurio(arrayuser).subscribe(
+                      (response) => {
+                        console.log(response)
+                        this.VerTodosLosUsuariosAdmin();
+                        this.obtenerUsuarioId(this.idusuarioadmin);
+                      }, (error) => {
+                        console.log(<any>error)
+                      }
+                    )
+                  }else{
+                    if(
+                      this.arrayuser2.name == "",
+                      this.arrayuser2.user != "",
+                      this.arrayuser2.email != "",
+                      this.arrayuser2.telefono != 0,
+                      this.arrayuser2.direccion == ""
+                    ){
+                      let arrayuser = { user: this.arrayuser2.user,
+                        email: this.arrayuser2.email,
+                        telefono: this.arrayuser2.telefono}
+
+                      this._usuarioService.editarUsaurio(arrayuser).subscribe(
+                        (response) => {
+                          console.log(response)
+                          this.VerTodosLosUsuariosAdmin();
+                          this.obtenerUsuarioId(this.idusuarioadmin);
+                        }, (error) => {
+                          console.log(<any>error)
+                        }
+                      )
+                    }else{
+                      if(
+                        this.arrayuser2.name == "",
+                        this.arrayuser2.user != "",
+                        this.arrayuser2.email != "",
+                        this.arrayuser2.telefono == 0,
+                        this.arrayuser2.direccion == ""
+                      ){
+                        let arrayuser = { user: this.arrayuser2.user,
+                          email: this.arrayuser2.email}
+  
+                        this._usuarioService.editarUsaurio(arrayuser).subscribe(
+                          (response) => {
+                            console.log(response)
+                            this.VerTodosLosUsuariosAdmin();
+                            this.obtenerUsuarioId(this.idusuarioadmin);
+                          }, (error) => {
+                            console.log(<any>error)
+                          }
+                        )
+                      }else{
+                        if(
+                          this.arrayuser2.name == "",
+                          this.arrayuser2.user != "",
+                          this.arrayuser2.email == "",
+                          this.arrayuser2.telefono == 0,
+                          this.arrayuser2.direccion == ""
+                        ){
+                          let arrayuser = { user: this.arrayuser2.user}
+    
+                          this._usuarioService.editarUsaurio(arrayuser).subscribe(
+                            (response) => {
+                              console.log(response)
+                              this.VerTodosLosUsuariosAdmin();
+                              this.obtenerUsuarioId(this.idusuarioadmin);
+                            }, (error) => {
+                              console.log(<any>error)
+                            }
+                          )
+                        }else{
+                          if(
+                            this.arrayuser2.name != "",
+                            this.arrayuser2.user != "",
+                            this.arrayuser2.email != "",
+                            this.arrayuser2.telefono != 0,
+                            this.arrayuser2.direccion != ""
+                          ){
+                            let arrayuser = {
+                              name: this.arrayuser2.name,
+                              user: this.arrayuser2.user,
+                              email: this.arrayuser2.email,
+                              telefono: this.arrayuser2.telefono,
+                              direccion: this.arrayuser2.direccion}
+    
+                            this._usuarioService.editarUsaurio(arrayuser).subscribe(
+                              (response) => {
+                                console.log(response)
+                                this.VerTodosLosUsuariosAdmin();
+                                this.obtenerUsuarioId(this.idusuarioadmin);
+                              }, (error) => {
+                                console.log(<any>error)
+                              }
+                            )
+                          }else{
+                            if(
+                              this.arrayuser2.name != "",
+                              this.arrayuser2.user != "",
+                              this.arrayuser2.email != "",
+                              this.arrayuser2.telefono != 0,
+                              this.arrayuser2.direccion == ""
+                            ){
+                              let arrayuser = {
+                                name: this.arrayuser2.name,
+                                user: this.arrayuser2.user,
+                                email: this.arrayuser2.email,
+                                telefono: this.arrayuser2.telefono}
+      
+                              this._usuarioService.editarUsaurio(arrayuser).subscribe(
+                                (response) => {
+                                  console.log(response)
+                                  this.VerTodosLosUsuariosAdmin();
+                                  this.obtenerUsuarioId(this.idusuarioadmin);
+                                }, (error) => {
+                                  console.log(<any>error)
+                                }
+                              )
+                            }else{
+                              if(this.arrayuser2.name != "",
+                              this.arrayuser2.user != "",
+                              this.arrayuser2.email != "",
+                              this.arrayuser2.telefono == 0,
+                              this.arrayuser2.direccion == ""){
+                                let arrayuser = {
+                                  name: this.arrayuser2.name,
+                                  user: this.arrayuser2.user,
+                                  email: this.arrayuser2.email}
+        
+                                this._usuarioService.editarUsaurio(arrayuser).subscribe(
+                                  (response) => {
+                                    console.log(response)
+                                    this.VerTodosLosUsuariosAdmin();
+                                    this.obtenerUsuarioId(this.idusuarioadmin);
+                                  }, (error) => {
+                                    console.log(<any>error)
+                                  }
+                                )
+                              }else{
+                                if(this.arrayuser2.name != "",
+                                this.arrayuser2.user != "",
+                                this.arrayuser2.email == "",
+                                this.arrayuser2.telefono == 0,
+                                this.arrayuser2.direccion == ""){
+                                  let arrayuser = {
+                                    name: this.arrayuser2.name,
+                                    user: this.arrayuser2.user}
+          
+                                  this._usuarioService.editarUsaurio(arrayuser).subscribe(
+                                    (response) => {
+                                      console.log(response)
+                                      this.VerTodosLosUsuariosAdmin();
+                                      this.obtenerUsuarioId(this.idusuarioadmin);
+                                    }, (error) => {
+                                      console.log(<any>error)
+                                    }
+                                  )
+                                }else{
+                                  let arrayuser = {
+                                    name: this.arrayuser2.name}
+          
+                                  this._usuarioService.editarUsaurio(arrayuser).subscribe(
+                                    (response) => {
+                                      console.log(response)
+                                      this.VerTodosLosUsuariosAdmin();
+                                      this.obtenerUsuarioId(this.idusuarioadmin);
+                                    }, (error) => {
+                                      console.log(<any>error)
+                                    }
+                                  )
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+  }
+}
+
 }

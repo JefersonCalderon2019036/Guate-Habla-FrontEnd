@@ -46,15 +46,15 @@ import { serviciosglobales } from './rutaglobal.services';
     }
 
      //funcion para editar mi perfil
-     editarperfil(usuario: usuarios): Observable<any>{
+     editarperfil(usuario: any): Observable<any>{
       let params = JSON.stringify(usuario);
       return this._http.put(this.url + 'userUpdate/' + this.getId() , params, {headers: this.encabezadocontoken})
     }
 
     //funcion para editar perfil
-    EditarUsuarioid(usuario: usuarios): Observable<any>{
+    editarUsaurio(usuario: any):Observable<any>{
       let params = JSON.stringify(usuario);
-      return this._http.put(this.url +"updateUserAdmin/"+ this.getsolounusuarioid(), params, {headers: this.encabezadocontoken})
+      return this._http.put(this.url + 'updateUserAdmin/' + this.getsolounusuarioid(), params, {headers: this.encabezadocontoken})
     }
 
     //funcion para eliminar mi perfil

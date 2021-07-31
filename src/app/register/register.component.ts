@@ -25,6 +25,7 @@ export class RegisterComponent implements OnInit {
 
   registrar(){
     this.usuarioModel.rol = "ROL_USUARIO"
+    this.usuarioModel.estado = "DISPONIBLE"
     this._usuarioService.registrar(this.usuarioModel).subscribe(
       (response) => {
         console.log(response)

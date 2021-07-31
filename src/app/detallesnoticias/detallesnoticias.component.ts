@@ -19,9 +19,9 @@ export class DetallesnoticiasComponent implements OnInit {
   public NoticiaModel: noticias;
   public solounanoticia: any;
   public Comentarios: any;
-  public desabilitaralertas: any;
   public modaleditar: any;
-  public textcomentario: string | undefined;
+  public textcomentario: any;
+  public arraymensajes = {userIdComentario: "",username: "", descripcionComentario: ""}
 
   constructor(
     public _usuarioService: UsersServices,
@@ -36,8 +36,7 @@ export class DetallesnoticiasComponent implements OnInit {
 
   ngOnInit(): void {
     this.VerSolaUnaNoticia();
-    this.desabilitaralertas = false;
-    
+    this.VerificacionDelRol();
   }
 
   VerSolaUnaNoticia(){
@@ -51,4 +50,23 @@ export class DetallesnoticiasComponent implements OnInit {
     )
   }
 
+  AgregarUnComentario(){
+    this.arraymensajes.username = this.nameuser
+    this._NoticiasServices.AgregarComentario(this.arraymensajes).subscribe(
+      response =>{
+        console.log(response)
+        this.VerSolaUnaNoticia();
+      }, (error) => {
+        console.log(<any>error)
+      }
+    )
+  }
+
+  VerificacionDelRol(){
+    if("ROL_ADMIN" == this.rol){
+      this.verificaciondelrol = true;
+    }else{
+      this.verificaciondelrol = false;
+    }
+  }
 }

@@ -34,6 +34,12 @@ import { serviciosglobales } from './rutaglobal.services';
       return this._http.post(this.url + "agregarNoticia", params, {headers: this.encabezadocontoken})
     }
 
+    //funcion para agregar un comentario
+    AgregarComentario(nuevanoticia: any): Observable<any>{
+      let params = JSON.stringify(nuevanoticia);
+      return this._http.post(this.url + "agregarComentarioNoticia/"+ this.getMiUsuario() + "/" + this.getsolounanoticia(), params, {headers: this.encabezadocontoken})
+    }
+
     //funcion para obtener el token desde el localStorage
     getToken(){
         var token2 = localStorage.getItem('token');
@@ -48,6 +54,17 @@ import { serviciosglobales } from './rutaglobal.services';
     //funcion para obtener el token desde el localStorage
     getsolounanoticia(){
       var token2 = localStorage.getItem('IdSoloUnaNoticia');
+      if(token2 != 'undefined'){
+        this.token = token2;
+      }else{
+        this.token = null;
+      }
+      return this.token;
+    }
+
+    //funcion para obtener el token desde el localStorage
+    getMiUsuario(){
+      var token2 = localStorage.getItem('iddelusuario');
       if(token2 != 'undefined'){
         this.token = token2;
       }else{

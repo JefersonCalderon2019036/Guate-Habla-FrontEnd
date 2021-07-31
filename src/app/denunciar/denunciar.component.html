@@ -10,58 +10,35 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <form action="index.html" method="post">
+      <br> 
+      <form action="index.html" method="post" style="margin-top: 10%;">
         <h1> Denuncia </h1>
         
-        <fieldset>
-          
-          <legend><span class="number">1</span> Informacion Del afectado</legend>
-        
-          <label for="name"> Nombre: <span class="text-danger">*</span></label>
-          <input type="text" placeholder="Ingresa tu nombre de pila" id="name" name="user_name">
-        
-          <label for="email"> Correo Electronico: <span class="text-danger">*</span></label>
-          <input type="email" placeholder="Correo para contacterte" id="mail" name="user_correo-electronico">
- 
-        
-          <label>Selecciona si eres mayor o menor de edad: <span class="text-danger">*</span></label>
-          <input type="radio" id="menor_18" value="menor_18" name="user_age"><label for="menor_18" class="light">1-17</label><br>
-          <input type="radio" id="mayor_18" value="mayor_18" name="user_age"><label for="mayor_18" class="light">18+</label>
-          
-        </fieldset>
         <fieldset>  
         
-          <legend><span class="number">2</span> Informacion</legend>
+          <legend><span class="number">1</span> Informacion</legend>
           
          <label for="descripcion">Describa su denuncia: <span class="text-danger">*</span></label>
-          <textarea id="descripcion" name="user_description"></textarea>
+          <textarea id="descripcion" name="descripcion" #descripcion="ngModel" [(ngModel)]="denunciasmodelo.descripcion" placeholder="Ingrese la descripción de la denuncia"  name="user_description"></textarea>
         
        
         
-         <label for="job">Tipo de denuncia: <span class="text-danger">*</span></label>
-          <select id="job" name="user_job">
-            <optgroup label="Denuncia">
-              <option value="tipo1">tipo1</option>
-              <option value="tipo1">tipo2</option>
-            </optgroup>
+          <label for="name"> Imagen: <span class="text-danger">*</span></label>
+          <input name="img" #img="ngModel" [(ngModel)]="denunciasmodelo.img" type="text" placeholder="Ingrese la Imagen" id="name" name="user_name">
 
-          </select>
           
-          <label>Perdidas: <span class="text-danger">*</span></label>
-          <input type="checkbox" id="Economicas" value="perdidas_economicas" name="user_perdidas"><label class="light" for="economicas">Economicas</label><br>
-          <input type="checkbox" id="Materiales" value="perdidas_materiales" name="user_perdidas"><label class="light" for="materiales">Materiales</label><br>
-          <input type="checkbox" id="Vidas" value="perdidas_vidas" name="user_perdidas"><label class="light" for="vidas">Vidas</label>
           
          </fieldset>
-       
-        <button type="submit">Anonimo</button> <br>
-        <button type="submit">Publico</button>
+         
+         <legend><span class="number">2</span> Tipo de denuncia</legend>
+        <button type="submit" (click)="CrearUnaDenunciaAnonima()">Anonimo</button> <br>
+        <button type="submit" (click)="CrearUnaDenunciaPublica()">Publico</button>
         
        </form>
+       <br>
         </div>
       </div>
       
 </div>
 </section>
 </body>
-<app-piedepagina></app-piedepagina>

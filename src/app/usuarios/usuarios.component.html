@@ -111,19 +111,15 @@
       <div class="modal-body">
 
         <label for="Usuario" style="width: 40%;">Nombre<span class="text-danger">*</span></label>
-        <input type="text" style="width: 60%;" required="" placeholder="Ingrese Nombre" name="name" #name="ngModel" [(ngModel)]="usuarioModel.name">  
+        <input type="text" style="width: 60%;" required="" placeholder="Ingrese Nombre" name="name" #name="ngModel" [(ngModel)]="arrayuser2.name">  
         <label for="Usuario" style="width: 40%;">Nombre usuario<span class="text-danger">*</span></label>
-        <input type="text" style="width: 60%;" required="" placeholder="Nombre de usuario" name="user" #user="ngModel" [(ngModel)]="usuarioModel.user">  
+        <input type="text" style="width: 60%;" required="" placeholder="Nombre de usuario" name="user" #user="ngModel" [(ngModel)]="arrayuser2.user">  
         <label for="Usuario" style="width: 40%;">Dirección<span class="text-danger">*</span></label>
-        <input type="text" style="width: 60%;" required="" placeholder="Dirección" name="direccion" #direccion="ngModel" [(ngModel)]="usuarioModel.direccion">
+        <input type="text" style="width: 60%;" required="" placeholder="Dirección" name="direccion" #direccion="ngModel" [(ngModel)]="arrayuser2.direccion">
         <label for="Usuario" style="width: 40%;">Telefono<span class="text-danger">*</span></label>
-        <input style="width: 60%;" minlength="8" maxlength="8" type="text" required="" placeholder="0" name="telefono" #telefono="ngModel" [(ngModel)]="usuarioModel.telefono">
-<!--CUI-->
-        <label for="Usuario" style="width: 40%;">CUI<span class="text-danger">*</span></label>
-        <input style="width: 60%;" minlength="13" maxlength="13" type="text" required="" pattern="[1-9]+" placeholder="Ingrese los 13 digitos de su DPI" name="dpi" #dpi="ngModel" [(ngModel)]="usuarioModel.dpi">            
-<!---correo elctronico-->
+        <input style="width: 60%;" minlength="8" maxlength="8" type="text" required="" placeholder="0" name="telefono" #telefono="ngModel" [(ngModel)]="arrayuser2.telefono">
         <label for="Usuario" style="width: 40%;">Correo Electronico<span class="text-danger">*</span></label>
-        <input style="width: 60%;" type="text" required="" placeholder="Ingrese un correo electronico" name="email" #email="ngModel" [(ngModel)]="usuarioModel.email">
+        <input style="width: 60%;" type="text" required="" placeholder="Ingrese un correo electronico" name="email" #email="ngModel" [(ngModel)]="arrayuser2.email">
 
         <div style="width: 100%; display: flex;">
           <label for="Usuario" style="width: 40%;">Rol<span class="text-danger">*</span></label>
@@ -137,7 +133,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar </button>
-        <button type="button" class="btn btn-primary">Actualizar</button>
+        <button type="button" (click)="editarinformacionusuario()" class="btn btn-primary">Actualizar</button>
       </div>
     </div>
   </div>

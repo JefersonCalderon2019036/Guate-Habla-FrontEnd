@@ -12,3 +12,21 @@ body {
     top: 89%;
     left: 91%;
 }
+
+.contenedor-chat{
+    width: 470px;
+	height: 500px;
+	overflow: auto;
+	border-radius: 4px;
+    color:white
+}
+
+.contenedor-chat::-webkit-scrollbar {
+    background: white;
+    border-radius: 10px;
+}
+
+.contenedor-chat::-webkit-scrollbar-thumb {
+	background: #e1cc4f;
+    border-radius: 10px;
+}

@@ -37,13 +37,456 @@ export class PerfilComponent implements OnInit {
   }
 
   editarperfil(){
-    this._usuarioService.editarperfil(this.usuarioModel).subscribe(
-      (response) => {
-        console.log(response)
-      }, (error) => {
-        console.log(<any>error)
+    if(  
+      this.usuarioModel.name == "" &&
+      this.usuarioModel.user == "" &&
+      this.usuarioModel.email == "" &&
+      this.usuarioModel.telefono == 0 &&
+      this.usuarioModel.direccion == "" &&
+      this.usuarioModel.img == ""
+    ){
+      console.log("No hay datos a actualizar")
+    }else{
+      if(
+        this.usuarioModel.name == "" &&
+        this.usuarioModel.user == "" &&
+        this.usuarioModel.email == "" &&
+        this.usuarioModel.telefono == 0 &&
+        this.usuarioModel.direccion == "" &&
+        this.usuarioModel.img != ""
+      ){
+        let arrayuser = { img: this.usuarioModel.img}
+
+          this._usuarioService.editarperfil(arrayuser ).subscribe(
+            (response) => {
+              console.log(response)
+              this.VerMiPerfil();
+            }, (error) => {
+              console.log(<any>error)
+            }
+          )
+      }else{
+        
+        if(
+          this.usuarioModel.name == "" &&
+          this.usuarioModel.user == "" &&
+          this.usuarioModel.email == "" &&
+          this.usuarioModel.telefono == 0 &&
+          this.usuarioModel.direccion != "" &&
+          this.usuarioModel.img != ""
+        ){
+          let arrayuser = {direccion: this.usuarioModel.direccion,
+            img: this.usuarioModel.img }
+          this._usuarioService.editarperfil(arrayuser ).subscribe(
+            (response) => {
+              console.log(response)
+              this.VerMiPerfil();
+            }, (error) => {
+              console.log(<any>error)
+            }
+          )
+        }else{
+          if(this.usuarioModel.name == "" &&
+          this.usuarioModel.user == "" &&
+          this.usuarioModel.email == "" &&
+          this.usuarioModel.telefono == 0 &&
+          this.usuarioModel.direccion != "" &&
+          this.usuarioModel.img == ""){
+               let arrayuser = { direccion: this.usuarioModel.direccion}
+
+              this._usuarioService.editarperfil(arrayuser ).subscribe(
+                (response) => {
+                  console.log(response)
+                  this.VerMiPerfil();
+                }, (error) => {
+                  console.log(<any>error)
+                }
+              )
+          }else{
+            if(
+              this.usuarioModel.name == "" &&
+              this.usuarioModel.user == "" &&
+              this.usuarioModel.email == "" &&
+              this.usuarioModel.telefono != 0 &&
+              this.usuarioModel.direccion != "" &&
+              this.usuarioModel.img != ""
+            ){
+              let arrayuser = {telefono: this.usuarioModel.telefono,
+                direccion: this.usuarioModel.direccion,
+                img: this.usuarioModel.img }
+
+              this._usuarioService.editarperfil(arrayuser ).subscribe(
+                (response) => {
+                  console.log(response)
+                  this.VerMiPerfil();
+                }, (error) => {
+                  console.log(<any>error)
+                }
+              )
+            }else{
+              if(
+                this.usuarioModel.name == "" &&
+                this.usuarioModel.user == "" &&
+                this.usuarioModel.email == "" &&
+                this.usuarioModel.telefono != 0 &&
+                this.usuarioModel.direccion != "" &&
+                this.usuarioModel.img == ""
+              ){
+                let arrayuser = {telefono: this.usuarioModel.telefono,
+                  direccion: this.usuarioModel.direccion}
+
+                this._usuarioService.editarperfil(arrayuser ).subscribe(
+                  (response) => {
+                    console.log(response)
+                    this.VerMiPerfil();
+                  }, (error) => {
+                    console.log(<any>error)
+                  }
+                )
+              }else{
+                if(
+                  this.usuarioModel.name == "" &&
+                  this.usuarioModel.user == "" &&
+                  this.usuarioModel.email == "" &&
+                  this.usuarioModel.telefono != 0 &&
+                  this.usuarioModel.direccion == "" &&
+                  this.usuarioModel.img == ""
+                  ){
+                    let arrayuser = {telefono: this.usuarioModel.telefono}
+
+                    this._usuarioService.editarperfil(arrayuser ).subscribe(
+                      (response) => {
+                        console.log(response)
+                        this.VerMiPerfil();
+                      }, (error) => {
+                        console.log(<any>error)
+                      }
+                    )
+                  }else{
+                    if(
+                      this.usuarioModel.name == "" &&
+                      this.usuarioModel.user == "" &&
+                      this.usuarioModel.email != "" &&
+                      this.usuarioModel.telefono != 0 &&
+                      this.usuarioModel.direccion != "" &&
+                      this.usuarioModel.img != ""
+                      ){
+                        let arrayuser = {email: this.usuarioModel.email,
+                          telefono: this.usuarioModel.telefono,
+                          direccion: this.usuarioModel.direccion,
+                          img: this.usuarioModel.img }
+
+                        this._usuarioService.editarperfil(arrayuser ).subscribe(
+                          (response) => {
+                            console.log(response)
+                            this.VerMiPerfil();
+                          }, (error) => {
+                            console.log(<any>error)
+                          }
+                        )
+                      }else{
+                        if(this.usuarioModel.name == "" &&
+                        this.usuarioModel.user == "" &&
+                        this.usuarioModel.email != "" &&
+                        this.usuarioModel.telefono != 0 &&
+                        this.usuarioModel.direccion != "" &&
+                        this.usuarioModel.img == ""){
+                          let arrayuser = { email: this.usuarioModel.email,
+                            telefono: this.usuarioModel.telefono,
+                            direccion: this.usuarioModel.direccion
+                            }
+
+                          this._usuarioService.editarperfil(arrayuser ).subscribe(
+                            (response) => {
+                              console.log(response)
+                              this.VerMiPerfil();
+                            }, (error) => {
+                              console.log(<any>error)
+                            }
+                          )
+                        }else{
+                          if(this.usuarioModel.name == "" &&
+                        this.usuarioModel.user == "" &&
+                        this.usuarioModel.email != "" &&
+                        this.usuarioModel.telefono != 0 &&
+                        this.usuarioModel.direccion == "" &&
+                        this.usuarioModel.img == ""){
+                          let arrayuser = { email: this.usuarioModel.email,
+                            telefono: this.usuarioModel.telefono
+                            }
+
+                          this._usuarioService.editarperfil(arrayuser ).subscribe(
+                            (response) => {
+                              console.log(response)
+                              this.VerMiPerfil();
+                            }, (error) => {
+                              console.log(<any>error)
+                            }
+                          )
+                        }else{
+                          if(this.usuarioModel.name == "" &&
+                        this.usuarioModel.user == "" &&
+                        this.usuarioModel.email != "" &&
+                        this.usuarioModel.telefono != 0 &&
+                        this.usuarioModel.direccion == "" &&
+                        this.usuarioModel.img == ""){
+                          let arrayuser = { email: this.usuarioModel.email,
+                            telefono: this.usuarioModel.telefono
+                            }
+
+                          this._usuarioService.editarperfil(arrayuser ).subscribe(
+                            (response) => {
+                              console.log(response)
+                              this.VerMiPerfil();
+                            }, (error) => {
+                              console.log(<any>error)
+                            }
+                          )
+                        }else{
+                          if(this.usuarioModel.name == "" &&
+                        this.usuarioModel.user == "" &&
+                        this.usuarioModel.email != "" &&
+                        this.usuarioModel.telefono == 0 &&
+                        this.usuarioModel.direccion == "" &&
+                        this.usuarioModel.img == ""){
+                          let arrayuser = { email: this.usuarioModel.email}
+
+                          this._usuarioService.editarperfil(arrayuser ).subscribe(
+                            (response) => {
+                              console.log(response)
+                              this.VerMiPerfil();
+                            }, (error) => {
+                              console.log(<any>error)
+                            }
+                          )
+                        }else{
+                          if(this.usuarioModel.name == "" &&
+                          this.usuarioModel.user != "" &&
+                          this.usuarioModel.email != "" &&
+                          this.usuarioModel.telefono != 0 &&
+                          this.usuarioModel.direccion != "" &&
+                          this.usuarioModel.img != ""){
+                            let arrayuser = { user: this.usuarioModel.user,
+                              email: this.usuarioModel.email,
+                              telefono: this.usuarioModel.telefono,
+                              direccion: this.usuarioModel.direccion,
+                              img: this.usuarioModel.img}
+
+                            this._usuarioService.editarperfil(arrayuser ).subscribe(
+                              (response) => {
+                                console.log(response)
+                                this.VerMiPerfil();
+                              }, (error) => {
+                                console.log(<any>error)
+                              }
+                            )
+                          }else{
+                            if(this.usuarioModel.name == "" &&
+                          this.usuarioModel.user != "" &&
+                          this.usuarioModel.email != "" &&
+                          this.usuarioModel.telefono != 0 &&
+                          this.usuarioModel.direccion != "" &&
+                          this.usuarioModel.img == ""){
+                            let arrayuser = { user: this.usuarioModel.user,
+                              email: this.usuarioModel.email,
+                              telefono: this.usuarioModel.telefono,
+                              direccion: this.usuarioModel.direccion}
+
+                            this._usuarioService.editarperfil(arrayuser ).subscribe(
+                              (response) => {
+                                console.log(response)
+                                this.VerMiPerfil();
+                              }, (error) => {
+                                console.log(<any>error)
+                              }
+                            )
+                          }else{
+                            if(this.usuarioModel.name == "" &&
+                          this.usuarioModel.user != "" &&
+                          this.usuarioModel.email != "" &&
+                          this.usuarioModel.telefono != 0 &&
+                          this.usuarioModel.direccion == "" &&
+                          this.usuarioModel.img == ""){
+                            let arrayuser = { user: this.usuarioModel.user,
+                              email: this.usuarioModel.email,
+                              telefono: this.usuarioModel.telefono}
+
+                            this._usuarioService.editarperfil(arrayuser ).subscribe(
+                              (response) => {
+                                console.log(response)
+                                this.VerMiPerfil();
+                              }, (error) => {
+                                console.log(<any>error)
+                              }
+                            )
+                          }else{
+                            if(this.usuarioModel.name == "" &&
+                          this.usuarioModel.user != "" &&
+                          this.usuarioModel.email != "" &&
+                          this.usuarioModel.telefono == 0 &&
+                          this.usuarioModel.direccion == "" &&
+                          this.usuarioModel.img == ""){
+                            let arrayuser = { user: this.usuarioModel.user,
+                              email: this.usuarioModel.email}
+
+                            this._usuarioService.editarperfil(arrayuser ).subscribe(
+                              (response) => {
+                                console.log(response)
+                                this.VerMiPerfil();
+                              }, (error) => {
+                                console.log(<any>error)
+                              }
+                            )
+                          }else{
+                            if(this.usuarioModel.name == "" &&
+                          this.usuarioModel.user != "" &&
+                          this.usuarioModel.email == "" &&
+                          this.usuarioModel.telefono == 0 &&
+                          this.usuarioModel.direccion == "" &&
+                          this.usuarioModel.img == ""){
+                            let arrayuser = { user: this.usuarioModel.user}
+
+                            this._usuarioService.editarperfil(arrayuser ).subscribe(
+                              (response) => {
+                                console.log(response)
+                                this.VerMiPerfil();
+                              }, (error) => {
+                                console.log(<any>error)
+                              }
+                            )
+                          }else{
+                            if(this.usuarioModel.name != "" &&
+                              this.usuarioModel.user != "" &&
+                              this.usuarioModel.email != "" &&
+                              this.usuarioModel.telefono != 0 &&
+                              this.usuarioModel.direccion != "" &&
+                              this.usuarioModel.img != ""){
+                                let arrayuser = { name: this.usuarioModel.name,
+                                  user: this.usuarioModel.user,
+                                  email: this.usuarioModel.email,
+                                  telefono: this.usuarioModel.telefono,
+                                  direccion: this.usuarioModel.direccion,
+                                  img: this.usuarioModel.img}
+
+                                this._usuarioService.editarperfil(arrayuser ).subscribe(
+                                  (response) => {
+                                    console.log(response)
+                                    this.VerMiPerfil();
+                                  }, (error) => {
+                                    console.log(<any>error)
+                                  }
+                                )
+                              }else{
+                                if(this.usuarioModel.name != "" &&
+                              this.usuarioModel.user != "" &&
+                              this.usuarioModel.email != "" &&
+                              this.usuarioModel.telefono != 0 &&
+                              this.usuarioModel.direccion != "" &&
+                              this.usuarioModel.img == ""){
+                                let arrayuser = { name: this.usuarioModel.name,
+                                  user: this.usuarioModel.user,
+                                  email: this.usuarioModel.email,
+                                  telefono: this.usuarioModel.telefono,
+                                  direccion: this.usuarioModel.direccion}
+
+                                this._usuarioService.editarperfil(arrayuser ).subscribe(
+                                  (response) => {
+                                    console.log(response)
+                                    this.VerMiPerfil();
+                                  }, (error) => {
+                                    console.log(<any>error)
+                                  }
+                                )
+                              }else{
+                                if(this.usuarioModel.name != "" &&
+                              this.usuarioModel.user != "" &&
+                              this.usuarioModel.email != "" &&
+                              this.usuarioModel.telefono != 0 &&
+                              this.usuarioModel.direccion == "" &&
+                              this.usuarioModel.img == ""){
+                                let arrayuser = { name: this.usuarioModel.name,
+                                  user: this.usuarioModel.user,
+                                  email: this.usuarioModel.email,
+                                  telefono: this.usuarioModel.telefono}
+
+                                this._usuarioService.editarperfil(arrayuser ).subscribe(
+                                  (response) => {
+                                    console.log(response)
+                                    this.VerMiPerfil();
+                                  }, (error) => {
+                                    console.log(<any>error)
+                                  }
+                                )
+                              }else{
+                                if(this.usuarioModel.name != "" &&
+                              this.usuarioModel.user != "" &&
+                              this.usuarioModel.email != "" &&
+                              this.usuarioModel.telefono == 0 &&
+                              this.usuarioModel.direccion == "" &&
+                              this.usuarioModel.img == ""){
+                                let arrayuser = { name: this.usuarioModel.name,
+                                  user: this.usuarioModel.user,
+                                  email: this.usuarioModel.email}
+
+                                this._usuarioService.editarperfil(arrayuser ).subscribe(
+                                  (response) => {
+                                    console.log(response)
+                                    this.VerMiPerfil();
+                                  }, (error) => {
+                                    console.log(<any>error)
+                                  }
+                                )
+                              }else{
+                                if(this.usuarioModel.name != "" &&
+                              this.usuarioModel.user != "" &&
+                              this.usuarioModel.email == "" &&
+                              this.usuarioModel.telefono == 0 &&
+                              this.usuarioModel.direccion == "" &&
+                              this.usuarioModel.img == ""){
+                                let arrayuser = { name: this.usuarioModel.name,
+                                  user: this.usuarioModel.user}
+
+                                this._usuarioService.editarperfil(arrayuser ).subscribe(
+                                  (response) => {
+                                    console.log(response)
+                                    this.VerMiPerfil();
+                                  }, (error) => {
+                                    console.log(<any>error)
+                                  }
+                                )
+                              }else{
+                                let arrayuser = { name: this.usuarioModel.name}
+
+                                this._usuarioService.editarperfil(arrayuser ).subscribe(
+                                  (response) => {
+                                    console.log(response)
+                                    this.VerMiPerfil();
+                                  }, (error) => {
+                                    console.log(<any>error)
+                                  }
+                                )
+                              }
+                              }
+                              }
+                              }
+                              }
+                          }
+                          }
+                          }
+                          }
+                          }
+                        }
+                        }
+                        }
+                        }
+                      }
+                  }
+              }
+            }
+          }
+        }
       }
-    )
+    }
   }
 
   eliminarmiperfil(){
