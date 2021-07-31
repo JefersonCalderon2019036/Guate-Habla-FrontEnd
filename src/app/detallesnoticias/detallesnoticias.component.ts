@@ -51,19 +51,4 @@ export class DetallesnoticiasComponent implements OnInit {
     )
   }
 
-  VerificacionId(id: any){
-    if(!this.iduser == id){
-      this.desabilitaralertas = true;
-    }else{
-      this.desabilitaralertas = false;
-    }
-  }
-
-  cerrar(){
-    this.desabilitaralertas = false;
-  }
-
-  AgregarComentario(){
-    
-  }
 }

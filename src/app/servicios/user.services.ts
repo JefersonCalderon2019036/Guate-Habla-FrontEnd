@@ -34,18 +34,37 @@ import { serviciosglobales } from './rutaglobal.services';
     MiPerfil(): Observable<any>{
       return this._http.get(this.url + "getUserId/" + this.getId(), {headers: this.encabezadocontoken})
     }
+    
+    //funcion para ver solo un  el usuarios
+    obtenerUsuarioId(): Observable<any>{
+      return this._http.get(this.url + "getUserId/"+ this.getsolounusuarioid(), {headers: this.encabezadocontoken})
+    }
 
+    //funcion para ver todos los ususuarios
     vertodoslosusuariosadmin(): Observable<any>{
       return this._http.get(this.url + "getUserIdAdmin/" + this.getId(), {headers: this.encabezadocontoken})
     }
+
      //funcion para editar mi perfil
      editarperfil(usuario: usuarios): Observable<any>{
       let params = JSON.stringify(usuario);
       return this._http.put(this.url + 'userUpdate/' + this.getId() , params, {headers: this.encabezadocontoken})
     }
 
+    //funcion para editar perfil
+    EditarUsuarioid(usuario: usuarios): Observable<any>{
+      let params = JSON.stringify(usuario);
+      return this._http.put(this.url +"updateUserAdmin/"+ this.getsolounusuarioid(), params, {headers: this.encabezadocontoken})
+    }
+
+    //funcion para eliminar mi perfil
     eliminarmiperfil(): Observable<any>{
       return this._http.delete(this.url + "userDelete/" + this.getId(), {headers: this.encabezadocontoken})
+    }
+
+    //funcion para eliminar un usuario como administrador
+    eliminarunsolousuarioadmin(){
+      return this._http.delete(this.url + "deleteUserAdmin/" + this.getsolounusuarioid(), {headers: this.encabezadocontoken})
     }
 
      //funcion para obtener el token desde el localStorage
@@ -103,4 +122,14 @@ import { serviciosglobales } from './rutaglobal.services';
       return this.identidad;
     }
 
+    //funcion para obtener el id del usuario
+    getsolounusuarioid(){
+      var identidad2 = localStorage.getItem('IdDeSoloUnUsuario');
+      if(identidad2 != 'undefined'){
+        this.identidad = identidad2
+      }else{
+        this.identidad = null;
+      }
+      return this.identidad;
+    }
   }

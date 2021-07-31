@@ -1,5 +1,5 @@
 <body>
-<app-menudenavegacion></app-menudenavegacion>
+  <app-menudenavegacion></app-menudenavegacion>
 <div class="titulo">
     <h3>ADMINISTRACION</h3>
 </div>
@@ -27,14 +27,138 @@
             <td>{{ usua.rol }}</td>
             <td>
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <button type="button" class="btn btn-danger">Eliminar</button>
-                    <button type="button" class="btn btn-warning">Editar</button>
-                    <button type="button" class="btn btn-success">ver</button>
+                    <button type="button" (click)="obtenerUsuarioId(usua._id)" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger">Eliminar</button>
+                    <button type="button" (click)="obtenerUsuarioId(usua._id)" data-bs-toggle="modal" data-bs-target="#editarusuariomodal" class="btn btn-warning">Editar</button>
+                    <button type="button" (click)="obtenerUsuarioId(usua._id)" data-bs-toggle="modal" data-bs-target="#verusuariomodal" class="btn btn-success">ver</button>
                 </div>
             </td>
         </tr>
     </tbody>
   </table>
 </div>
-
 </body>
+
+<!-- Modal para ver los datos de un solo usuario -->
+<div style="margin-top: 7%;" class="modal fade" id="verusuariomodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="background-color: black; border-color: white; color: white;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Usuario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <br>
+        <div>
+          <img style="width: 40%; margin-left: 30%; margin-right: 30%; border-radius: 50%;" src={{unsolousuario.img}} alt="">
+          <br>
+          <hr>
+          <div style="display: flex; width: 80%; margin-left: 10%; margin-right: 10%;">
+            <label for="" style="width: 40%;">DPI</label>
+            <input type="text" style="width: 60%;" value={{unsolousuario.dpi}} disabled>
+          </div>
+
+          <div style="display: flex; width: 80%; margin-left: 10%; margin-right: 10%;">
+            <label for="" style="width: 40%;">Nombre</label>
+            <input type="text" style="width: 60%;" value={{unsolousuario.name}} disabled>
+          </div>
+
+          <div style="display: flex; width: 80%; margin-left: 10%; margin-right: 10%;">
+            <label for="" style="width: 40%;">Nombre de usuario</label>
+            <input type="text" style="width: 60%;" value={{unsolousuario.user}} disabled>
+          </div>
+
+          <div style="display: flex; width: 80%; margin-left: 10%; margin-right: 10%;">
+            <label for="" style="width: 40%;">Correo electronico</label>
+            <input type="text" style="width: 60%;" value={{unsolousuario.email}} disabled>
+          </div>
+
+          <div style="display: flex; width: 80%; margin-left: 10%; margin-right: 10%;">
+            <label for="" style="width: 40%;">Dirección</label>
+            <input type="text" style="width: 60%;" value={{unsolousuario.direccion}} disabled>
+          </div>
+
+          <div style="display: flex; width: 80%; margin-left: 10%; margin-right: 10%;">
+            <label for="" style="width: 40%;">Telefono</label>
+            <input type="text" style="width: 60%;" value={{unsolousuario.telefono}} disabled>
+          </div>
+
+          <div style="display: flex; width: 80%; margin-left: 10%; margin-right: 10%;">
+            <label for="" style="width: 40%;">Rol</label>
+            <input type="text" style="width: 60%;" value={{unsolousuario.rol}} disabled>
+          </div>
+
+          <hr>
+          <br>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal para editar un solo usuario-->
+<div style="margin-top: 15%;" class="modal fade" id="editarusuariomodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="background-color: black; border-color: white; color: white;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Usuario a editar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <label for="Usuario" style="width: 40%;">Nombre<span class="text-danger">*</span></label>
+        <input type="text" style="width: 60%;" required="" placeholder="Ingrese Nombre" name="name" #name="ngModel" [(ngModel)]="usuarioModel.name">  
+        <label for="Usuario" style="width: 40%;">Nombre usuario<span class="text-danger">*</span></label>
+        <input type="text" style="width: 60%;" required="" placeholder="Nombre de usuario" name="user" #user="ngModel" [(ngModel)]="usuarioModel.user">  
+        <label for="Usuario" style="width: 40%;">Dirección<span class="text-danger">*</span></label>
+        <input type="text" style="width: 60%;" required="" placeholder="Dirección" name="direccion" #direccion="ngModel" [(ngModel)]="usuarioModel.direccion">
+        <label for="Usuario" style="width: 40%;">Telefono<span class="text-danger">*</span></label>
+        <input style="width: 60%;" minlength="8" maxlength="8" type="text" required="" placeholder="0" name="telefono" #telefono="ngModel" [(ngModel)]="usuarioModel.telefono">
+<!--CUI-->
+        <label for="Usuario" style="width: 40%;">CUI<span class="text-danger">*</span></label>
+        <input style="width: 60%;" minlength="13" maxlength="13" type="text" required="" pattern="[1-9]+" placeholder="Ingrese los 13 digitos de su DPI" name="dpi" #dpi="ngModel" [(ngModel)]="usuarioModel.dpi">            
+<!---correo elctronico-->
+        <label for="Usuario" style="width: 40%;">Correo Electronico<span class="text-danger">*</span></label>
+        <input style="width: 60%;" type="text" required="" placeholder="Ingrese un correo electronico" name="email" #email="ngModel" [(ngModel)]="usuarioModel.email">
+
+        <div style="width: 100%; display: flex;">
+          <label for="Usuario" style="width: 40%;">Rol<span class="text-danger">*</span></label>
+          <div style="width: 60%; display: flex;">
+            <button type="submit" (click)="editarperfilusuarioroladmin()" style="width: 33.33%;">ADMIN</button>
+            <button type="submit" (click)="editarperfildeusuarioconelrolpolicia()" style="width: 33.33%;">POLICIA</button>
+            <button type="submit" (click)="editarperfilusuariorolusuario()" style="width: 33.33%;">USUARIOS</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar </button>
+        <button type="button" class="btn btn-primary">Actualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div style="margin-top: 25%;" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="background-color: black; border-color: white; color: white;">
+      <div class="modal-body">
+        <div class="alert" style="background-color: #cf1020; border-radius: 5px; display: flex;" role="alert">
+          <img  style="width: 20%; margin-right: 5%;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAOJJREFUSEvtldENwjAMRO82gEmADWByGIFOAhsYJWqqNI3tpFIEH+TbuWefkjMx+HCwPlSAiBwA3AGcnSaeAG4k37W6KqBDPGmqkA2gEJ8AXLXu5toHgBOAKmQF6BFPrXuQBbBHvAWSA8KIYVTVFhGRIEpSs3axi+Ql1mZdxMsAjobnKiBcnF145U1sALXuyiZ6av6AzectH8JvWdQSjO4EI59p+mhqcDV8tJS+E8mYwmVUmMGlWWTFTC3suiBehrmZYi0TT3xlUT5+EcEtj0cNSG9lJrssiLmUvrf0W3xpqfkAPVncGatem8gAAAAASUVORK5CYII="/>
+          <div style="margin-top: 1%;">
+            <h5>Deseas eliminar este usuario</h5>
+            <p>No podras recuperar los datos de este usuario</p>
+          </div>
+        </div>
+        <div style="margin-left: 55%; display: flex; width: 100%;">
+          <button type="button" class="btn btn-light"  style="width: 20%; margin-right: 2.5%" data-bs-dismiss="modal">No</button>
+          <button type="button" (click)="eliminarusuario()" class="btn btn-danger" style="width: 20%; margin-right: 2.5%" data-bs-dismiss="modal">SI</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
