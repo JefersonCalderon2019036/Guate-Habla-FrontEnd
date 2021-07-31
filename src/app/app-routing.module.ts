@@ -10,6 +10,7 @@ import { ContactanosComponent} from './contactanos/contactanos.component';
 import { DetallesnoticiasComponent } from './detallesnoticias/detallesnoticias.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import{ DenunciarComponent} from './denunciar/denunciar.component';
+import { PiedepaginaComponent } from './piedepagina/piedepagina.component';
 const routes: Routes = [
   {path: "inicio", component: InicioComponent},
   {path: "principal", component: PrincipalComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: "contactanos", component: ContactanosComponent},
   {path:"usuarios", component:UsuariosComponent},
   {path:"denunciar", component:DenunciarComponent},
+  {path: "piedepagina", component: PiedepaginaComponent},
   {path: "**", component: InicioComponent}
 ];
 

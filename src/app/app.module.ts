@@ -16,6 +16,7 @@ import { DetallesnoticiasComponent } from './detallesnoticias/detallesnoticias.c
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { DenunciarComponent } from './denunciar/denunciar.component';
 import { ScriptsService } from './scripts.service';
+import { PiedepaginaComponent } from './piedepagina/piedepagina.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ScriptsService } from './scripts.service';
     ContactanosComponent,
     DetallesnoticiasComponent,
     UsuariosComponent,
-    DenunciarComponent
+    DenunciarComponent,
+    PiedepaginaComponent
   ],
   imports: [
     BrowserModule,
