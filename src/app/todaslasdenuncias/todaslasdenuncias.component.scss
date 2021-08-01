@@ -8,3 +8,13 @@
     -webkit-text-fill-color: transparent;
       color: rgb(44, 83, 255);
 }
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  padding: 0 6px;
+  float: left;
+
+}
+
