@@ -51,6 +51,26 @@ export class DetallesdenunciasComponent implements OnInit {
   }
 
   EliminarChat(){
-    localStorage.setItem("idchat", "")
+    this._chatsservices.EliminarChat().subscribe(
+      response => {
+        console.log(response)
+        localStorage.setItem("idchat", "")
+        this.Editarperfil();
+      }, (error) => {
+        console.log(<any>error)
+      }
+    )
+  }
+
+  Editarperfil(){
+    let arrayuser = { estado: "DISPONIBLE"}
+
+      this._usuarioService.editarperfil(arrayuser ).subscribe(
+            (response) => {
+           console.log(response)
+      }, (error) => {
+          console.log(<any>error)
+      }
+    )
   }
 }

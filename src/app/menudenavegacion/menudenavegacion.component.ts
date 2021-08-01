@@ -21,6 +21,7 @@ export class MenudenavegacionComponent implements OnInit {
   public imagendemiperfil: any;
   static cerrarsecion: any;
   public chat2: any;
+  public chat3: any;
 
   constructor(
     public _usuarioService: UsersServices,
@@ -30,6 +31,7 @@ export class MenudenavegacionComponent implements OnInit {
     this.rol = this._usuarioService.getRol();
     this.token = this._usuarioService.getToken();
     this.nombre = this._usuarioService.getnombre();
+    this.chat3 = this._chatsservices.getIdChatActivo();
     this.imagendemiperfil = this._usuarioService.getimagenperfil();
   }
 
@@ -37,7 +39,8 @@ export class MenudenavegacionComponent implements OnInit {
     this.VerificacionDelToken();
     this.VerificacionDelToken2();
     this.VerificacionDelRol();
-    this.VerficacionDelRol2()
+    this.VerficacionDelRol2();
+    this.verficaciondechat();
   }
 
   VerificacionDelToken(){
@@ -45,6 +48,14 @@ export class MenudenavegacionComponent implements OnInit {
       this.verificaciondeltoken = true;
     }else{
       this.verificaciondeltoken = false;
+    }
+  }
+
+  verficaciondechat(){
+    if(this.chat3 == ""){
+      this.chat2 = true;
+    }else{
+      this.chat2 = false;
     }
   }
 

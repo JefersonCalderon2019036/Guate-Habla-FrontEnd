@@ -10,8 +10,7 @@ import { ScriptsService } from "./../scripts.service"
   providers: [denunciasservice,]
 })
 export class DenunciarComponent implements OnInit {
-  public denunciasmodelo = {img: "", descripcion: "", tipoDenuncia: ""};
-
+  public denunciasmodelo = {descripcion: "", tipoDenuncia: "", img: ""}
 
   constructor( private _CargaScripts:ScriptsService,
     private _denunciasservice: denunciasservice,
@@ -31,7 +30,7 @@ export class DenunciarComponent implements OnInit {
       response =>{
         console.log(response)
         localStorage.setItem("idchat", response._id)
-        this._router.navigate(['/principal'])
+        
       }, error => {
         console.log(<any>error)
       }
@@ -44,7 +43,6 @@ export class DenunciarComponent implements OnInit {
       response =>{
         console.log(response)
         localStorage.setItem("idchat", response._id)
-        this._router.navigate(['/principal'])
       }, error => {
         console.log(<any>error)
       }

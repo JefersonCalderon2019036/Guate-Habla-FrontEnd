@@ -22,6 +22,7 @@ export class PrincipalComponent implements OnInit {
   public nombrechat: any;
   public encargadorchat: any;
   public chat2: any;
+  public chat3: any;
   public chatbloqueo: any;
   public iduser: any;
   public nameuser: any;
@@ -36,7 +37,7 @@ export class PrincipalComponent implements OnInit {
     this.rol = this._usuarioService.getRol();
     this.iduser = this._usuarioService.getId();
     this.nameuser = this._usuarioService.getnombre();
-    this.chat2 = this._chatsservices.getIdChatActivo();
+    this.chat3 = this._chatsservices.getIdChatActivo();
     this.NoticiaModel = new noticias("","","","","", [{ userIdComentario: "",username: "", descripcionComentario: ""}])
   }
 
@@ -74,6 +75,15 @@ export class PrincipalComponent implements OnInit {
   recargar(){
     this.VerTodasLasNoticias();
     this.VerificacionDelRol();
+    this.verficaciondechat();
+  }
+
+  verficaciondechat(){
+    if(this.chat3 == ""){
+      this.chat2 = false;
+    }else{
+      this.chat2 = true;
+    }
   }
 
   VerificacionDelRol(){

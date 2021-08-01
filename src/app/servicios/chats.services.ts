@@ -28,6 +28,9 @@ import { serviciosglobales } from './rutaglobal.services';
       return this._http.post(this.url + "sendMessage/"+this.getIdChat(), params, {headers: this.encabezadocontoken})
     }
 
+    EliminarChat(): Observable<any>{
+      return this._http.delete(this.url + "endChat/"+this.getIdChatActivo(), {headers: this.encabezadocontoken})
+    }
 
     //funcion para obtener el token desde el localStorage
     getToken(){
