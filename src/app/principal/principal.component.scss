@@ -13,20 +13,19 @@ body {
     left: 91%;
 }
 
-.contenedor-chat{
-    width: 470px;
+.contenedor {
+	width: 470px;
 	height: 500px;
 	overflow: auto;
+	font-family: 'Open Sans';
 	border-radius: 4px;
-    color:white
 }
 
-.contenedor-chat::-webkit-scrollbar {
-    background: white;
-    border-radius: 10px;
+.contenedor::-webkit-scrollbar {
+	width: 7px;
 }
 
-.contenedor-chat::-webkit-scrollbar-thumb {
-	background: #e1cc4f;
-    border-radius: 10px;
+.contenedor::-webkit-scrollbar-thumb {
+	background: #ff9d00;
+	border-radius: 5px;
 }

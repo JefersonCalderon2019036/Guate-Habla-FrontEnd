@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { chatsservices } from '../servicios/chats.services';
 import { UsersServices } from '../servicios/user.services';
 
 @Component({
   selector: 'app-menudenavegacion',
   templateUrl: './menudenavegacion.component.html',
   styleUrls: ['./menudenavegacion.component.scss'],
-  providers: [UsersServices]
+  providers: [UsersServices,chatsservices]
 })
 export class MenudenavegacionComponent implements OnInit {
 
@@ -19,10 +20,13 @@ export class MenudenavegacionComponent implements OnInit {
   public nombre: any;
   public imagendemiperfil: any;
   static cerrarsecion: any;
+  public chat2: any;
 
   constructor(
     public _usuarioService: UsersServices,
+    public _chatsservices: chatsservices,
     private _router: Router) { 
+    this.chat2 = this._chatsservices.getIdChatActivo();
     this.rol = this._usuarioService.getRol();
     this.token = this._usuarioService.getToken();
     this.nombre = this._usuarioService.getnombre();

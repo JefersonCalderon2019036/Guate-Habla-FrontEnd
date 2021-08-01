@@ -122,10 +122,48 @@
 <!--Historial de usuario-->
 <section class="container-history">
 <div class="history">
-    <h1>HISTORIAL DENUNCIAS</h1>
+    <h1>HISTORIAL DE TUS DENUNCIAS</h1>
 </div>
 <div class="container" style="height:70%; width: 100%;">
+  <br>
+  <div class="row">
+    <div class="col">
+      <div *ngFor="let denunciasuser of denunciasuser" class="card" style="width: 18rem;">
+        <img *ngIf="denunciasuser.img == null" src="https://st4.depositphotos.com/1028437/21297/v/600/depositphotos_212975764-stock-illustration-no-image-available-sign.jpg" class="card-img-top" alt="...">
+        <img *ngIf="denunciasuser.img != null"src="{{denunciasuser.img}}" alt="">
+        <div class="card-body">
+          <h5 class="card-title" style="color:black"> Tipo de denunica: {{denunciasuser.tipoDenuncia}}</h5>
+          <p class="card-text" style="color:black"> Descripción: {{denunciasuser.descripcion}}</p>
+          <p class="card-text" style="color:black"> Estado: {{denunciasuser.status}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 </section>
+
+<!--Historial de usuario-->
+<section *ngIf="verificacionderol == rol" class="container-history2">
+  <div class="history">
+      <h1>DENUNCIAS PARA UN POLICIA</h1>
+  </div>
+  <div class="container" style="height:70%; width: 100%;">
+    <br>
+    <div class="row">
+      <div class="col">
+        <div *ngFor="let denunciaspolicias of denunciaspolicias" class="card" style="width: 18rem;">
+          <img *ngIf="denunciaspolicias.img == null" src="https://st4.depositphotos.com/1028437/21297/v/600/depositphotos_212975764-stock-illustration-no-image-available-sign.jpg" class="card-img-top" alt="...">
+          <img *ngIf="denunciaspolicias.img != null"src="{{denunciaspolicias.img}}" alt="">
+          <div class="card-body">
+            <h5 class="card-title" style="color:black"> Tipo de denunica: {{denunciaspolicias.tipoDenuncia}}</h5>
+            <p class="card-text" style="color:black"> Descripción: {{denunciaspolicias.descripcion}}</p>
+            <p class="card-text" style="color:black"> Estado: {{denunciaspolicias.status}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  </section>
   

@@ -117,9 +117,20 @@ h3{
     background-position: center;
     top: 106%;
     position: absolute;
+    height:112%;
+    width: 100%;
+}
+
+.container-history2{
+    background: url(https://upload.wikimedia.org/wikipedia/commons/6/6f/Palacio_De_Gobierno_De_Guatemala_%28243091369%29.jpeg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    top: 212%;
+    position: absolute;
     height:100%;
     width: 100%;
 }
+
 .container-history:before {
     content: "";
     background: rgba(5, 13, 24, 0.3);

@@ -28,6 +28,7 @@ export class DenunciarComponent implements OnInit {
     this._denunciasservice.postnuevadenuncia(this.denunciasmodelo).subscribe(
       response =>{
         console.log(response)
+        localStorage.setItem("idchat", response._id)
       }, error => {
         console.log(<any>error)
       }
@@ -39,6 +40,7 @@ export class DenunciarComponent implements OnInit {
     this._denunciasservice.postnuevadenuncia(this.denunciasmodelo).subscribe(
       response =>{
         console.log(response)
+        localStorage.setItem("idchat", response._id)
       }, error => {
         console.log(<any>error)
       }

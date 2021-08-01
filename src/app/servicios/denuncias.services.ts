@@ -33,6 +33,16 @@ import { serviciosglobales } from './rutaglobal.services';
       return this._http.get(this.url + "listDenuncias", {headers: this.encabezadocontoken})
     }
 
+    //funcion para ver las denuncias de un usuarios
+    getDenunciasUser(): Observable<any>{
+      return this._http.get(this.url + "listDenunciasUser/"+this.getIdUsuario(), {headers: this.encabezadocontoken})
+    }
+
+    //funcion para ver las denuncias de un usuarios
+    getDenunciasPolicias(): Observable<any>{
+      return this._http.get(this.url + "listDenunciasPoli/"+this.getIdUsuario(), {headers: this.encabezadocontoken})
+    }
+
      //funcion para obtener el token desde el localStorage
      getToken(){
         var token2 = localStorage.getItem('token');

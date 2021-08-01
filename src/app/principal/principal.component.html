@@ -20,63 +20,43 @@
 <br>
 </body>
 
-<img data-bs-toggle="modal" data-bs-target="#ModalDeMensajes" class="icono-mensajes" src="https://img2.freepng.es/20180705/bs/kisspng-computer-icons-email-electronic-mailing-list-clip-send-email-5b3dbe23d579c5.7984832715307730278744.jpg" alt="">
+<img *ngIf="chat2 != null" data-bs-toggle="modal" data-bs-target="#ModalDeMensajes" class="icono-mensajes" src="https://img2.freepng.es/20180705/bs/kisspng-computer-icons-email-electronic-mailing-list-clip-send-email-5b3dbe23d579c5.7984832715307730278744.jpg" alt="">
 
 <!-- Modal -->
 <div style="border-color: white;" class="modal fade" style="margin-top: 5%;" id="ModalDeMensajes" tabindex="-0.5" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="background-color: black; border-color: white;">
       <div class="modal-content" style="background-image: url(https://2.bp.blogspot.com/-oLY_RQz_XBA/XEKfyR8jrpI/AAAAAAAAA7E/P8k2yh85J14pj93W_gGVw0ue_h69iQsPwCLcBGAs/s640/62346-Recopilaci-n-De-Sorprendentes-Im-genes-Gif-En-Movimiento-Que-No-Te-....gif); border-color: white;">
         <div class="modal-header">
-          <h5 class="modal-title" style="color: white;" id="exampleModalLabel">Chats usuario 1 y usuario 2</h5>
+          <h5 class="modal-title" style="color: white;" id="exampleModalLabel">Chats {{encargadorchat}} y {{nombrechat}}</h5>
          
           <img data-bs-dismiss="modal" aria-label="Close" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAWFJREFUSEvFVVtRQzEU3HUACsABRQHFATgABdRJKwEUgAPqgFYB1AEOljmZk865uaGTXOYO+cxjH+cVYubFmfFRJZD0AOAJwKJRwA7AhuRLeX9AIOkMwHsHcIlnRLckv/NBSWAXrgAcAKwA7Eh+nXIh6dIFbQBc+JvrEYEkA1w7+CKqaAmTuzeBRvJI8tneHR1IyurvSb61gJZ3JN0BeI0uIoH8wXlU74+2pSNXvIxiPFyfSTmZsEcE+cAOo6KYvKIYBo4lJaGtBFZVW098qhB3mSttD8BcHKumi8BdlCS2bf0xAvf77Q5yEj0k2YltV8H/ShAbcNRQQUyfgyKhptyWNWOVpCsHFfClEwwSPznJoUwHMS9yMr1MQy/M02i94yI6JplG/clO7iHwsH0AsOlaHXaD8moF9/ljVWXj2sD3WX3VQSvwL/dGDRhDZKV3M5HAgO3LTH9AXP/z6U90UX32A0/w9xmjz0D7AAAAAElFTkSuQmCC"/>
         </div>
         <div class="modal-body">
-          <div class="contenedor-chat">
-            <div style=" background-color: #2cae2c; color:white; text-align: left; margin-right: 10%; margin-right: 5%; margin-left:5%; margin-top: 2%; margin-button:2%; border-radius: 5px;">
-              <h6 style="margin-left: 5%; margin-top:2%;">Usuario 1</h6>
-              <p style="margin-left: 5%; margin-top:2%;">jajajajjajajajajajjajajajjajajjaa</p>
-            </div>
-            <div style=" background-color: white; color:black; text-align: right; margin-right: 10%; margin-right: 5%; margin-left:5%; margin-top: 2%; margin-button:2%; border-radius: 5px;">
-              <h6 style="margin-right: 5%; margin-top:2%;">Usuario 2</h6>
-              <p style="margin-right: 5%; margin-top:2%;">jajajajjajajajajajjajajajjajajjaa</p>
-            </div>
-            <div style=" background-color: #2cae2c; color:white; text-align: left; margin-right: 10%; margin-right: 5%; margin-left:5%; margin-top: 2%; margin-button:2%; border-radius: 5px;">
-              <h6 style="margin-left: 5%; margin-top:2%;">Usuario 1</h6>
-              <p style="margin-left: 5%; margin-top:2%;">jajajajjajajajajajjajajajjajajjaa</p>
-            </div>
-            <div style=" background-color: white; color:black; text-align: right; margin-right: 10%; margin-right: 5%; margin-left:5%; margin-top: 2%; margin-button:2%; border-radius: 5px;">
-              <h6 style="margin-right: 5%; margin-top:2%;">Usuario 2</h6>
-              <p style="margin-right: 5%; margin-top:2%;">jajajajjajajajajajjajajajjajajjaa</p>
-            </div>
-            <div style=" background-color: #2cae2c; color:white; text-align: left; margin-right: 10%; margin-right: 5%; margin-left:5%; margin-top: 2%; margin-button:2%; border-radius: 5px;">
-              <h6 style="margin-left: 5%; margin-top:2%;">Usuario 1</h6>
-              <p style="margin-left: 5%; margin-top:2%;">jajajajjajajajajajjajajajjajajjaa</p>
-            </div>
-            <div style=" background-color: white; color:black; text-align: right; margin-right: 10%; margin-right: 5%; margin-left:5%; margin-top: 2%; margin-button:2%; border-radius: 5px;">
-              <h6 style="margin-right: 5%; margin-top:2%;">Usuario 2</h6>
-              <p style="margin-right: 5%; margin-top:2%;">jajajajjajajajajajjajajajjajajjaa</p>
-            </div>
-            <div style=" background-color: #2cae2c; color:white; text-align: left; margin-right: 10%; margin-right: 5%; margin-left:5%; margin-top: 2%; margin-button:2%; border-radius: 5px;">
-              <h6 style="margin-left: 5%; margin-top:2%;">Usuario 1</h6>
-              <p style="margin-left: 5%; margin-top:2%;">jajajajjajajajajajjajajajjajajjaa</p>
-            </div>
-            <div style=" background-color: white; color:black; text-align: right; margin-right: 10%; margin-right: 5%; margin-left:5%; margin-top: 2%; margin-button:2%; border-radius: 5px;">
-              <h6 style="margin-right: 5%; margin-top:2%;">Usuario 2</h6>
-              <p style="margin-right: 5%; margin-top:2%;">jajajajjajajajajajjajajajjajajjaa</p>
-            </div><div style=" background-color: #2cae2c; color:white; text-align: left; margin-right: 10%; margin-right: 5%; margin-left:5%; margin-top: 2%; margin-button:2%; border-radius: 5px;">
-              <h6 style="margin-left: 5%; margin-top:2%;">Usuario 1</h6>
-              <p style="margin-left: 5%; margin-top:2%;">jajajajjajajajajajjajajajjajajjaa</p>
-            </div>
-            <div style=" background-color: white; color:black; text-align: right; margin-right: 10%; margin-right: 5%; margin-left:5%; margin-top: 2%; margin-button:2%; border-radius: 5px;">
-              <h6 style="margin-right: 5%; margin-top:2%;">Usuario 2</h6>
-              <p style="margin-right: 5%; margin-top:2%;">jajajajjajajajajajjajajajjajajjaa</p>
-            </div>
+          <div class="contenedor">
+            <div *ngFor="let chat of chat">
+              <div *ngIf="chat.idUserMessage != iduser" class="card" style="margin-top:2%; width: 85%; margin-left: 5%; margin-right: 10%;">
+                <div class="card-body">
+                  <h5 *ngIf="nombrechat != nameuser" class="card-title">{{nombrechat}}</h5>
+                  <h5 *ngIf="encargadorchat != nameuser" class="card-title" >{{encargadorchat}}</h5>
+                  <p class="card-text">{{chat.mensaje}}</p>
+                </div>
+              </div>
+  
+              <div *ngIf="chat.idUserMessage == iduser" class="card" style="margin-top:2%;  width: 80%; margin-left: 10%; margin-right: 5%; background-color: #68FF33;">
+                <div class="card-body">
+                  <h5 class="card-title" *ngIf="encargadorchat != nameuser" style="text-align: right;">{{nombrechat}}</h5>
+                  <h5 class="card-title" *ngIf="encargadorchat == nameuser" style="text-align: right;">{{encargadorchat}}</h5>
+                  <p class="card-text" style="text-align: right;">{{chat.mensaje}}</p>
+                </div>
+              </div>
+            </div> 
           </div>
+          
+          
         </div>
         <div class="input-group mb-3" style="width: 90%; margin-left: 5%; border-color: white;" >
-            <input type="text" class="form-control" placeholder="Escribe tu mensajes" aria-label="Escribe tu mensajes" aria-describedby="button-addon2">
-            <button style="background-color: #199200; color: white;" class="btn btn-outline-secondary" type="button" id="button-addon2">Enviar</button>
+            <input name="mensaje" #mensaje="ngModel" [(ngModel)]="messajearray.mensaje" type="text" class="form-control" placeholder="Escribe tu mensajes" aria-label="Escribe tu mensajes" aria-describedby="button-addon2">
+            <button (click)="AgregarMesaje()" style="background-color: #199200; color: white;" class="btn btn-outline-secondary" type="button" id="button-addon2">Enviar</button>
         </div>
       </div>
     </div>
