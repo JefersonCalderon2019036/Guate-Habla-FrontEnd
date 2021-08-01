@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { denunciasservice } from '../servicios/denuncias.services';
 
 @Component({
@@ -13,7 +14,7 @@ export class TodaslasdenunciasComponent implements OnInit {
   public denunciasactivas: any;
   public todaslasdenuncias: any;
 
-  constructor(private _denunciasservice: denunciasservice ) { }
+  constructor(private _denunciasservice: denunciasservice,private _router: Router ) { }
 
   ngOnInit(): void {
     this.vertodaslasdenuncias2();
@@ -51,5 +52,10 @@ export class TodaslasdenunciasComponent implements OnInit {
         console.log(<any>error)
       }
     )
+  }
+
+  VerSoloUnaDenuncia(id: any){
+    localStorage.setItem("idDenuncias", id);
+    this._router.navigate(['/detallesdenuncias']);
   }
 }

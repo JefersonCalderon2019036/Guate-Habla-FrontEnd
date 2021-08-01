@@ -508,6 +508,7 @@ export class PerfilComponent implements OnInit {
         localStorage.setItem("imagendemiperfil", "");
         localStorage.setItem("iddelusuario", "");
         localStorage.setItem("IdSoloUnaNoticia", "");
+        localStorage.setItem("idDenuncias", "");
         this._router.navigate(['/inicio']);
       }, (error) => {
         console.log(<any>error)
@@ -537,5 +538,9 @@ export class PerfilComponent implements OnInit {
     )
   }
 
+  VerSoloUnaDenuncia(id: any){
+    localStorage.setItem("idDenuncias", id);
+    this._router.navigate(['/detallesdenuncias']);
+  }
 }
 

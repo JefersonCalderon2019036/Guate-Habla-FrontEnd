@@ -7,6 +7,34 @@
     </section>
 <!--Contenedor informacion denuncia-->
         <div id="denuncia" class="detalles">
+          <br>
+          <h5 style="text-align: center; color: white; text-transform: uppercase; font-size: 40px; margin-top: 3%;"> * Datos de la denuncia:</h5>
+          <hr style="color: white; margin-left: 10%; margin-right: 10%;">
+          <img style="width: 20%; margin-left: 40%; margin-right: 40%;" *ngIf="datosdenuncia.img == null" src="https://st4.depositphotos.com/1028437/21297/v/600/depositphotos_212975764-stock-illustration-no-image-available-sign.jpg" class="card-img-top" alt="...">
+          <img *ngIf="datosdenuncia.img != null"src="{{datosdenuncia.img}}" alt="" class="card-img-top">
+          <h3 style="color:green; margin-left: 10%; margin-right: 10%; display: flex; margin-top:2%;">Descripción:<h3 style="color:white; margin-left: 10%; margin-right: 10%;">{{datosdenuncia.descripcion}}</h3></h3>
+          <h3 style="color:green; margin-left: 10%; margin-right: 10%; display: flex; margin-top:2%;">Tipo de denuncia:<h3 style="color:white; margin-left: 10%; margin-right: 10%;">{{datosdenuncia.tipoDenuncia}}</h3></h3>
+          <h3 style="color:green; margin-left: 10%; margin-right: 10%; display: flex; margin-top:2%;">Estado:<h3 style="color:white; margin-left: 10%; margin-right: 10%;">{{datosdenuncia.status}}</h3></h3>
+          
+          <hr style="color: white; margin-left: 10%; margin-right: 10%;">
+          <br>
+          <h5 style="text-align: center; color: white; text-transform: uppercase; font-size: 40px; margin-top: 3%;"> * Datos del denunciador</h5>
+          <hr style="color: white; margin-left: 10%; margin-right: 10%;">
+          <h3 style="color:green; margin-left: 10%; margin-right: 10%; display: flex;">Código de registro: <h3 style="color:white; margin-left: 10%; margin-right: 10%;">{{datosdenuncia.userId}}</h3></h3>
+          <hr style="color: white; margin-left: 10%; margin-right: 10%;">
+          <br>
+          <h5 style="text-align: center; color: white; text-transform: uppercase; font-size: 40px; margin-top: 3%;"> * Datos del policia acargo</h5>
+          <hr style="color: white; margin-left: 10%; margin-right: 10%;">
+          <h3 style="color:green; margin-left: 10%; margin-right: 10%; display: flex;">Código de registro: <h3 style="color:white; margin-left: 10%; margin-right: 10%;">{{datosdenuncia.encargadoId}}</h3></h3>
+          <h3 style="color:green; margin-left: 10%; margin-right: 10%; display: flex;">Nombre del policia: <h3 style="color:white; margin-left: 10%; margin-right: 10%;">{{datosdenuncia.nameEncargado}}</h3></h3>
+          <hr style="color: white; margin-left: 10%; margin-right: 10%;">
+          <br>
 
+          <h5 style="text-align: center; color: white; text-transform: uppercase; font-size: 40px; margin-top: 3%;"> * Botones de acciones</h5>
+          <hr style="color: white; margin-left: 10%; margin-right: 10%;">
+          <div style="width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 2%;" class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <button type="button" class="btn btn-light">Imprimir denuncia</button>
+            <button type="button" *ngIf="verificacionderol == datosdenuncia.encargadoId" class="btn btn-success">Finalizar denuncia</button>
+          </div>
         </div>
 </body>

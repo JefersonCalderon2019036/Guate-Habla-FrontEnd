@@ -43,6 +43,11 @@ import { serviciosglobales } from './rutaglobal.services';
       return this._http.get(this.url + "listDenunciasPoli/"+this.getIdUsuario(), {headers: this.encabezadocontoken})
     }
 
+    //funcion para ver solo una denuncia
+    getSolounaDenuncia(): Observable<any>{
+      return this._http.get(this.url + "OneDenuncia/"+this.getDenncia(), {headers: this.encabezadocontoken})
+    }
+
      //funcion para obtener el token desde el localStorage
      getToken(){
         var token2 = localStorage.getItem('token');
@@ -64,4 +69,15 @@ import { serviciosglobales } from './rutaglobal.services';
         }
         return this.token;
       }
+
+      //funcion para obtener el token desde el localStorage
+     getDenncia(){
+      var token2 = localStorage.getItem('idDenuncias');
+      if(token2 != 'undefined'){
+        this.token = token2;
+      }else{
+        this.token = null;
+      }
+      return this.token;
+    }
   }
