@@ -28,6 +28,7 @@ import { serviciosglobales } from './rutaglobal.services';
       return this._http.post(this.url + "sendMessage/"+this.getIdChat(), params, {headers: this.encabezadocontoken})
     }
 
+
     //funcion para obtener el token desde el localStorage
     getToken(){
         var token2 = localStorage.getItem('token');
@@ -59,4 +60,5 @@ import { serviciosglobales } from './rutaglobal.services';
         }
         return this.identidad;
     }
+
   }

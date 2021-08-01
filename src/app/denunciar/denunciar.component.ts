@@ -10,14 +10,14 @@ import { ScriptsService } from "./../scripts.service"
   providers: [denunciasservice,]
 })
 export class DenunciarComponent implements OnInit {
-  public denunciasmodelo: any;
+  public denunciasmodelo = {img: "", descripcion: "", tipoDenuncia: ""};
+
 
   constructor( private _CargaScripts:ScriptsService,
     private _denunciasservice: denunciasservice,
     private _router: Router)
    {
      _CargaScripts.Carga(["denunciar/denunciar"]);
-     this.denunciasmodelo = new denuncias("","","","","","","")
     }
 
 

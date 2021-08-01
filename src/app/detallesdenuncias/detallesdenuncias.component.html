@@ -34,7 +34,7 @@
           <hr style="color: white; margin-left: 10%; margin-right: 10%;">
           <div style="width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 2%;" class="btn-group" role="group" aria-label="Basic mixed styles example">
             <button type="button" class="btn btn-light">Imprimir denuncia</button>
-            <button type="button" *ngIf="verificacionderol == datosdenuncia.encargadoId" class="btn btn-success">Finalizar denuncia</button>
+            <button type="button" (click)="FinalizarDenuncia()" *ngIf="verificacionderol == datosdenuncia.encargadoId" class="btn btn-success">Finalizar denuncia</button>
           </div>
         </div>
 </body>

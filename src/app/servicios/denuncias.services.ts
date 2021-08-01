@@ -18,7 +18,7 @@ import { serviciosglobales } from './rutaglobal.services';
     }
 
     //funcion para generar una denuncias
-    postnuevadenuncia(denuncia: denuncias): Observable<any>{
+    postnuevadenuncia(denuncia: any): Observable<any>{
         let params = JSON.stringify(denuncia);
         return this._http.put(this.url + "addDenuncia/"+this.getIdUsuario(), params, {headers: this.encabezadocontoken})
     }
@@ -47,6 +47,12 @@ import { serviciosglobales } from './rutaglobal.services';
     getSolounaDenuncia(): Observable<any>{
       return this._http.get(this.url + "OneDenuncia/"+this.getDenncia(), {headers: this.encabezadocontoken})
     }
+
+    putEditarDenuncias(denuncia: any): Observable<any>{
+      let params = JSON.stringify(denuncia);
+      return this._http.put(this.url + "editDenuncia/"+this.getDenncia(), params, {headers: this.encabezadocontoken})
+    }
+
 
      //funcion para obtener el token desde el localStorage
      getToken(){
