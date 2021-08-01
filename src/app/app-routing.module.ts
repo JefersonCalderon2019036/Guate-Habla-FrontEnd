@@ -12,6 +12,7 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import{ DenunciarComponent} from './denunciar/denunciar.component';
 import { PiedepaginaComponent } from './piedepagina/piedepagina.component';
 import { DetallesdenunciasComponent} from './detallesdenuncias/detallesdenuncias.component';
+import { TodaslasdenunciasComponent } from './todaslasdenuncias/todaslasdenuncias.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path:"denunciar", component:DenunciarComponent},
   {path: "piedepagina", component: PiedepaginaComponent},
   {path:"detallesdenuncias", component: DetallesdenunciasComponent},
+  {path:"todaslasdenuncias", component: TodaslasdenunciasComponent},
   {path: "**", component: InicioComponent}
 ];
 

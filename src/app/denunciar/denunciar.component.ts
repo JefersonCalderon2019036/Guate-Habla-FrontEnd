@@ -1,20 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { denuncias } from '../modelos/denuncias.modelos';
 import { denunciasservice } from '../servicios/denuncias.services';
-import { UsersServices } from '../servicios/user.services';
 import { ScriptsService } from "./../scripts.service"
 @Component({
   selector: 'app-denunciar',
   templateUrl: './denunciar.component.html',
   styleUrls: ['./denunciar.component.scss'],
-  providers: [denunciasservice,UsersServices]
+  providers: [denunciasservice,]
 })
 export class DenunciarComponent implements OnInit {
   public denunciasmodelo: any;
 
   constructor( private _CargaScripts:ScriptsService,
-    private _denunciasservice: denunciasservice,
-    private _usuarioService: UsersServices,)
+    private _denunciasservice: denunciasservice)
    {
      _CargaScripts.Carga(["denunciar/denunciar"]);
      this.denunciasmodelo = new denuncias("","","","","","","")
@@ -26,6 +24,7 @@ export class DenunciarComponent implements OnInit {
 
   CrearUnaDenunciaAnonima(){
     this.denunciasmodelo.tipoDenuncia = "ANONIMO"
+    
     this._denunciasservice.postnuevadenuncia(this.denunciasmodelo).subscribe(
       response =>{
         console.log(response)

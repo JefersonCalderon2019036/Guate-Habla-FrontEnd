@@ -22,6 +22,8 @@ export class DetallesnoticiasComponent implements OnInit {
   public modaleditar: any;
   public textcomentario: any;
   public arraymensajes = {userIdComentario: "",username: "", descripcionComentario: ""}
+  public arraycomentarioupdate = {descripcionComentario: ""}
+  public arraydatosactualizar = {titulo: "", descripcion: "", img: ""}
 
   constructor(
     public _usuarioService: UsersServices,
@@ -69,4 +71,157 @@ export class DetallesnoticiasComponent implements OnInit {
       this.verificaciondelrol = false;
     }
   }
+
+  EliminarNoticia(){
+    this._NoticiasServices.EliminarUnaNotcia().subscribe(
+      response => {
+        console.log(response)
+        this._router.navigate(['/principal'])
+      }, (error) => {
+        console.log(<any>error)
+      }
+    )
+  }
+
+  EditarNoticia(){
+    
+    if(
+      this.arraydatosactualizar.titulo == "",
+      this.arraydatosactualizar.descripcion =="",
+      this.arraydatosactualizar.img ==""){
+      console.log('No hay datos para actualizar')
+    }else{
+      if(
+        this.arraydatosactualizar.titulo == "",
+        this.arraydatosactualizar.descripcion =="",
+        this.arraydatosactualizar.img !=""){
+          let arrayuser = { img: this.arraydatosactualizar.img }
+
+          this._NoticiasServices.EditarUnaNoticia(arrayuser).subscribe(
+            response => {
+              console.log(response)
+              this.VerSolaUnaNoticia();
+              this.VerificacionDelRol();
+            }, (error) => {
+              console.log(<any>error)
+            }
+          )
+      }else{
+        if(
+          this.arraydatosactualizar.titulo == "",
+          this.arraydatosactualizar.descripcion !="",
+          this.arraydatosactualizar.img !=""){
+            let arrayuser = { img: this.arraydatosactualizar.img,
+                              descripcion: this.arraydatosactualizar.descripcion}
+  
+            this._NoticiasServices.EditarUnaNoticia(arrayuser).subscribe(
+              response => {
+                console.log(response)
+                this.VerSolaUnaNoticia();
+                 this.VerificacionDelRol();
+              }, (error) => {
+                console.log(<any>error)
+              }
+            )
+        }else{
+          if(
+            this.arraydatosactualizar.titulo == "",
+            this.arraydatosactualizar.descripcion !="",
+            this.arraydatosactualizar.img ==""){
+              let arrayuser = { descripcion: this.arraydatosactualizar.descripcion}
+    
+              this._NoticiasServices.EditarUnaNoticia(arrayuser).subscribe(
+                response => {
+                  console.log(response)
+                  this.VerSolaUnaNoticia();
+                   this.VerificacionDelRol();
+                }, (error) => {
+                  console.log(<any>error)
+                }
+              )
+          }else{
+            if(
+              this.arraydatosactualizar.titulo != "",
+              this.arraydatosactualizar.descripcion !="",
+              this.arraydatosactualizar.img !=""){
+                let arrayuser = { titulo: this.arraydatosactualizar.titulo,
+                                  img: this.arraydatosactualizar.img,
+                                  descripcion: this.arraydatosactualizar.descripcion}
+      
+                this._NoticiasServices.EditarUnaNoticia(arrayuser).subscribe(
+                  response => {
+                    console.log(response)
+                    this.VerSolaUnaNoticia();
+                     this.VerificacionDelRol();
+                  }, (error) => {
+                    console.log(<any>error)
+                  }
+                )
+            }else{
+              if(
+                this.arraydatosactualizar.titulo != "",
+                this.arraydatosactualizar.descripcion !="",
+                this.arraydatosactualizar.img ==""){
+                  let arrayuser = { titulo: this.arraydatosactualizar.titulo,
+                                    descripcion: this.arraydatosactualizar.descripcion}
+        
+                  this._NoticiasServices.EditarUnaNoticia(arrayuser).subscribe(
+                    response => {
+                      console.log(response)
+                      this.VerSolaUnaNoticia();
+                       this.VerificacionDelRol();
+                    }, (error) => {
+                      console.log(<any>error)
+                    }
+                  )
+              }else{
+                let arrayuser = { titulo: this.arraydatosactualizar.titulo}
+          
+                    this._NoticiasServices.EditarUnaNoticia(arrayuser).subscribe(
+                      response => {
+                        console.log(response)
+                        this.VerSolaUnaNoticia();
+                         this.VerificacionDelRol();
+                      }, (error) => {
+                        console.log(<any>error)
+                      }
+                    )
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  Obtenerunid(id: any){
+    localStorage.setItem("comentariodi", id)
+    var token2 = localStorage.getItem('comentariodi');
+    console.log(token2)
+  }
+
+  EliminarComentario(){
+    this._NoticiasServices.EliminarUnComentario().subscribe(
+      response => {
+        console.log(response)
+        this.VerSolaUnaNoticia();
+        this.VerificacionDelRol();
+      }, error => {
+        console.log(<any>error)
+      }
+    )
+  }
+
+  EditarComentario(){
+    this._NoticiasServices.EditarComentario(this.arraycomentarioupdate).subscribe(
+      response => {
+        console.log(response)
+        this.VerSolaUnaNoticia();
+        this.VerificacionDelRol();
+      }, (error) => {
+        console.log(<any>error)
+      }
+    )
+  }
+
 }

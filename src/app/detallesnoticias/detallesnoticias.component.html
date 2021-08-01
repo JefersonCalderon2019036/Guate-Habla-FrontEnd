@@ -6,8 +6,8 @@
         <div style="display: flex;">
             <h5 style="color:white; width: 55%; margin-left: 10%; margin-right: 10%;">{{solounanoticia.titulo}}</h5>
             <div *ngIf="verificaciondelrol" class="btn-group" role="group" aria-label="Basic mixed styles example">
-                <button type="button" class="btn btn-danger">Eliminar</button>
-                <button type="button" class="btn btn-warning">Editar</button>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#eliminarnoticia" class="btn btn-danger">Eliminar</button>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#editarnoticia" class="btn btn-warning">Editar</button>
             </div>
         </div>
         <hr style="color:white; margin-left: 10%; margin-right: 10%;">
@@ -27,8 +27,8 @@
             <div class="card" style=" margin-top: 5%; background-color: black; border-color: white;width: 80%; margin-left: 10%; margin-right: 10%;">
                 <div class="card-header" style="background-color: #e4eeee;">
                     <label for="" style="color: black; border-color: white; width: 93%; ">{{com.username}}</label>
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAN1JREFUSEvFlO0NwjAMBa8bwCQwAkzCKjACE8EIsAkbgJ6USKEkdj5a0T+V2vQufnY6sfI1rcxnRLABToDuV+CV22yvQNAbsA/QB3DMSXoEKfwZBDsgK2kVzOGHILgDklyAcxpVi6AUi3gxrm6BFYsE6oXiUkVfza6pwItFgixcLzxBDq4dlp7/TKolGIZbFSwCLwkWg5cEOjCa6bRx1ZnPm5DrwTss2oaR64aXKogCyYfgniCttjjn3u/eiih+2w2vOWjeBt333kl2Ad6Cmog8hjmZfxG07thcv3oPPg35Shmq75wnAAAAAElFTkSuQmCC"/>
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAZNJREFUSEu9lY0xBGEQRN9lIANEgAiQAREgAkSCCBABIkAEyIAMZEA99c3V7Nz+nCpnqrbqdneue7pnvtkZK47ZivFZhuAY2AW222VNr+26Bx7GihwjOAAugI0Jle/AOSDZQgwRXAKnLfsD8P6pVe1j1ewBZ8B6yzNHok70EWRw/+D9WEiiUuOqkc7zK4G23LW3O6niqVlQ0UtLOsx2VQL9VHKtfA34LCz1WSgRYzNyM4HTcg3oeW7sDbAF7CcSwR+bwpNEHAXOVWQCgY5K9QLZXAkcTUkMwbXlrTU71IWKW8CCO+dAAIGq95UkpqiCx3N7IZY4HYKvVl3fZGUS0/rAw6kOTgabIghbBAq7auN9N0gwZlH2XJDck0wS46pCf3csGmpybaj/q41fqslxyDpzDEgcqyGAoieq/pmWFqNjas5fHLTOOfr3VaGKvOw8OC6wsfjVsgugTKJt3j+Xde1HSPBYKwubtE5RrdKmCxz7fkiFnkv0qw9OBpPIy0ly/uMkO0GC9gIHwDLf5IkWjL9eOcE3/8xyGRxL0ikAAAAASUVORK5CYII="/>
+                    <img data-bs-toggle="modal" data-bs-target="#editarcomentario" (click)="Obtenerunid(com._id)" *ngIf="com.userIdComentario == iduser" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAN1JREFUSEvFlO0NwjAMBa8bwCQwAkzCKjACE8EIsAkbgJ6USKEkdj5a0T+V2vQufnY6sfI1rcxnRLABToDuV+CV22yvQNAbsA/QB3DMSXoEKfwZBDsgK2kVzOGHILgDklyAcxpVi6AUi3gxrm6BFYsE6oXiUkVfza6pwItFgixcLzxBDq4dlp7/TKolGIZbFSwCLwkWg5cEOjCa6bRx1ZnPm5DrwTss2oaR64aXKogCyYfgniCttjjn3u/eiih+2w2vOWjeBt333kl2Ad6Cmog8hjmZfxG07thcv3oPPg35Shmq75wnAAAAAElFTkSuQmCC"/>
+                    <img data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="Obtenerunid(com._id)" *ngIf="com.userIdComentario == iduser" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAZNJREFUSEu9lY0xBGEQRN9lIANEgAiQAREgAkSCCBABIkAEyIAMZEA99c3V7Nz+nCpnqrbqdneue7pnvtkZK47ZivFZhuAY2AW222VNr+26Bx7GihwjOAAugI0Jle/AOSDZQgwRXAKnLfsD8P6pVe1j1ewBZ8B6yzNHok70EWRw/+D9WEiiUuOqkc7zK4G23LW3O6niqVlQ0UtLOsx2VQL9VHKtfA34LCz1WSgRYzNyM4HTcg3oeW7sDbAF7CcSwR+bwpNEHAXOVWQCgY5K9QLZXAkcTUkMwbXlrTU71IWKW8CCO+dAAIGq95UkpqiCx3N7IZY4HYKvVl3fZGUS0/rAw6kOTgabIghbBAq7auN9N0gwZlH2XJDck0wS46pCf3csGmpybaj/q41fqslxyDpzDEgcqyGAoieq/pmWFqNjas5fHLTOOfr3VaGKvOw8OC6wsfjVsgugTKJt3j+Xde1HSPBYKwubtE5RrdKmCxz7fkiFnkv0qw9OBpPIy0ly/uMkO0GC9gIHwDLf5IkWjL9eOcE3/8xyGRxL0ikAAAAASUVORK5CYII="/>
                 </div>
                 <div class="card-body">
                   <p class="card-text" style="color: white;">
@@ -42,3 +42,89 @@
     </div>
     <br>
 </body>
+
+<!-- Modal -->
+<div style="margin-top: 25%;" class="modal fade" id="eliminarnoticia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: black; border-color: white; color: white;">
+          <div class="modal-body">
+            <div class="alert" style="background-color: #cf1020; border-radius: 5px; display: flex;" role="alert">
+              <img  style="width: 20%; margin-right: 5%;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAOJJREFUSEvtldENwjAMRO82gEmADWByGIFOAhsYJWqqNI3tpFIEH+TbuWefkjMx+HCwPlSAiBwA3AGcnSaeAG4k37W6KqBDPGmqkA2gEJ8AXLXu5toHgBOAKmQF6BFPrXuQBbBHvAWSA8KIYVTVFhGRIEpSs3axi+Ql1mZdxMsAjobnKiBcnF145U1sALXuyiZ6av6AzectH8JvWdQSjO4EI59p+mhqcDV8tJS+E8mYwmVUmMGlWWTFTC3suiBehrmZYi0TT3xlUT5+EcEtj0cNSG9lJrssiLmUvrf0W3xpqfkAPVncGatem8gAAAAASUVORK5CYII="/>
+              <div style="margin-top: 1%;">
+                <h5>Deseas eliminar esta noticia</h5>
+                <p>No podras recuperar los datos de esta noticia</p>
+              </div>
+            </div>
+            <div style="margin-left: 55%; display: flex; width: 100%;">
+              <button type="button" class="btn btn-light"  style="width: 20%; margin-right: 2.5%" data-bs-dismiss="modal">No</button>
+              <button type="button" (click)="EliminarNoticia()" class="btn btn-danger" style="width: 20%; margin-right: 2.5%" data-bs-dismiss="modal">SI</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+    <!-- Modal -->
+<div style="margin-top: 20%;" class="modal fade" id="editarnoticia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: black; border-color: white; width: 80%">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" style="color: white;">Editar noticia</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="" style="display: flex;">
+            <h6 style="color:white; width: 45%;">Titulo</h6>
+            <input type="text" style="width: 55%"  name="titulo" #titulo="ngModel" [(ngModel)]="arraydatosactualizar.titulo">
+          </div>
+          <div class="" style="display: flex;">
+            <h6 style="color:white; width: 45%;">Descripción</h6>
+            <input type="text" style="width: 55%"  name="descripcion" #descripcion="ngModel" [(ngModel)]="arraydatosactualizar.descripcion">
+          </div>
+          <div class="" style="display: flex;">
+            <h6 style="color:white; width: 45%;">Imagen</h6>
+            <input type="text" style="width: 55%"  name="img" #img="ngModel" [(ngModel)]="arraydatosactualizar.img">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+          <button type="button" class="btn btn-primary" (click)="EditarNoticia()" data-bs-dismiss="modal">Actualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+<div style="margin-top: 25%;" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="background-color: black; border-color: white; color: white;">
+      <div class="modal-body">
+        <div class="alert" style="background-color: #cf1020; border-radius: 5px; display: flex;" role="alert">
+          <img  style="width: 20%; margin-right: 5%;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAOJJREFUSEvtldENwjAMRO82gEmADWByGIFOAhsYJWqqNI3tpFIEH+TbuWefkjMx+HCwPlSAiBwA3AGcnSaeAG4k37W6KqBDPGmqkA2gEJ8AXLXu5toHgBOAKmQF6BFPrXuQBbBHvAWSA8KIYVTVFhGRIEpSs3axi+Ql1mZdxMsAjobnKiBcnF145U1sALXuyiZ6av6AzectH8JvWdQSjO4EI59p+mhqcDV8tJS+E8mYwmVUmMGlWWTFTC3suiBehrmZYi0TT3xlUT5+EcEtj0cNSG9lJrssiLmUvrf0W3xpqfkAPVncGatem8gAAAAASUVORK5CYII="/>
+          <div style="margin-top: 1%;">
+            <h5>Deseas eliminar este comentario</h5>
+            <p>No podras recuperar los datos de tu comentario</p>
+          </div>
+        </div>
+        <div style="margin-left: 55%; display: flex; width: 100%;">
+          <button type="button" class="btn btn-light"  style="width: 20%; margin-right: 2.5%" data-bs-dismiss="modal">No</button>
+          <button (click)="EliminarComentario()" type="button" class="btn btn-danger" style="width: 20%; margin-right: 2.5%" data-bs-dismiss="modal">SI</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div style="margin-top: 25%;" class="modal fade" id="editarcomentario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content"  style="background-color: black; border-color: white; color: white;">
+      <div class="modal-body">
+        <div class="input-group mb-3">
+          <input name="descripcionComentario" #descripcionComentario="ngModel" [(ngModel)]="arraycomentarioupdate.descripcionComentario" type="text" class="form-control" placeholder="Edita tu mensaje" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <button (click)="EditarComentario()" class="btn btn-primary" data-bs-dismiss="modal" class="btn btn-success" type="button" id="button-addon2">Actualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
