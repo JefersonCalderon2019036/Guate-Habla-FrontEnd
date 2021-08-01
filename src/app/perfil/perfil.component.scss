@@ -2,7 +2,7 @@
 body{
     background: url(https://i.pinimg.com/originals/0b/b8/7a/0bb87a7e4573405c8a42e0e937471f77.jpg) no-repeat center center;
     background-size: cover;
-    height: 100vh;
+    height: 106vh;
 
 }
 
@@ -26,7 +26,7 @@ body{
     display: block;
     position: relative;
     width: 90%;
-    height: 10rem;
+    height: 9rem;
     background: url(https://fondosmil.com/fondo/17024.jpg);
     border-radius: 0 0 20px 20px;
 }
@@ -35,7 +35,7 @@ body{
 .seccion-perfil-usuario .perfil-usuario-avatar {
     display: flex;
     width: 160px;
-    height: 160px;
+    height: 155px;
     align-items: center;
     justify-content: center;
     border: 7px solid #FFFFFF;
@@ -110,3 +110,46 @@ h3{
     text-align: center;
     font-size: 16px;
   }
+/*Contenedor historial usuario*/
+.container-history{
+    background: url(https://upload.wikimedia.org/wikipedia/commons/6/6f/Palacio_De_Gobierno_De_Guatemala_%28243091369%29.jpeg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    top: 106%;
+    position: absolute;
+    height:100%;
+    width: 100%;
+}
+.container-history:before {
+    content: "";
+    background: rgba(5, 13, 24, 0.3);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+  }
+.history{
+    z-index: 1;
+    position: relative;
+    color:#000000;
+    text-align: center;
+    align-items: center;
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 40px #0ff,
+      0 0 80px #0ff,
+      0 0 90px #0ff,
+      0 0 100px #0ff,
+      0 0 150px #0ff;
+}
+.container{
+    color: #ffffff;
+    position: relative;
+    background:linear-gradient(#070707, transparent,transparent, transparent,transparent, #070707);
+    border: 1px solid white;
+    border-radius: 3px;
+}
