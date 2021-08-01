@@ -17,6 +17,7 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { DenunciarComponent } from './denunciar/denunciar.component';
 import { ScriptsService } from './scripts.service';
 import { PiedepaginaComponent } from './piedepagina/piedepagina.component';
+import { TodaslasdenunciasComponent } from './todaslasdenuncias/todaslasdenuncias.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { PiedepaginaComponent } from './piedepagina/piedepagina.component';
     DetallesnoticiasComponent,
     UsuariosComponent,
     DenunciarComponent,
-    PiedepaginaComponent
+    PiedepaginaComponent,
+    TodaslasdenunciasComponent
   ],
   imports: [
     BrowserModule,
