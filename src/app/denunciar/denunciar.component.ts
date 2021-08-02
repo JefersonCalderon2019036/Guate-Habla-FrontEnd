@@ -30,7 +30,7 @@ export class DenunciarComponent implements OnInit {
       response =>{
         console.log(response)
         localStorage.setItem("idchat", response._id)
-        
+        this._router.navigate(['/principal'])
       }, error => {
         console.log(<any>error)
       }
@@ -43,6 +43,7 @@ export class DenunciarComponent implements OnInit {
       response =>{
         console.log(response)
         localStorage.setItem("idchat", response._id)
+        this._router.navigate(['/principal'])
       }, error => {
         console.log(<any>error)
       }
