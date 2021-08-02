@@ -89,11 +89,13 @@ export class MenudenavegacionComponent implements OnInit {
 
   cerrarsecion(){
     localStorage.setItem('token', "");
-    localStorage.setItem('Rol', "");
-    localStorage.setItem("nombre", "");
-    localStorage.setItem("imagendemiperfil", "");
-    localStorage.setItem("iddelusuario", "");
-    localStorage.setItem("IdSoloUnaNoticia", "");
+        localStorage.setItem('Rol', "");
+        localStorage.setItem("nombre", "");
+        localStorage.setItem("imagendemiperfil", "");
+        localStorage.setItem("iddelusuario", "");
+        localStorage.setItem("IdSoloUnaNoticia", "");
+        localStorage.setItem("idDenuncias", "");
+        localStorage.setItem("idchat", "")
     this._router.navigate(['/inicio']);
     this.VerificacionDelToken();
     this.VerificacionDelToken2();

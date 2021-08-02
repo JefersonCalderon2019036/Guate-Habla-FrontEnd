@@ -509,6 +509,7 @@ export class PerfilComponent implements OnInit {
         localStorage.setItem("iddelusuario", "");
         localStorage.setItem("IdSoloUnaNoticia", "");
         localStorage.setItem("idDenuncias", "");
+        localStorage.setItem("idchat", "")
         this._router.navigate(['/inicio']);
       }, (error) => {
         console.log(<any>error)
