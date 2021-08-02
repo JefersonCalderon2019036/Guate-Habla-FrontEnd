@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { denuncias } from '../modelos/denuncias.modelos';
 import { denunciasservice } from '../servicios/denuncias.services';
 import { ScriptsService } from "./../scripts.service"
@@ -33,6 +34,12 @@ export class DenunciarComponent implements OnInit {
         this._router.navigate(['/principal'])
       }, error => {
         console.log(<any>error)
+        let textura = <any>error.error.message
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -46,6 +53,12 @@ export class DenunciarComponent implements OnInit {
         this._router.navigate(['/principal'])
       }, error => {
         console.log(<any>error)
+        let textura = <any>error.error.message
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }

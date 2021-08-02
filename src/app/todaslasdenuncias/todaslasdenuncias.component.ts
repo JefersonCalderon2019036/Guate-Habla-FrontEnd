@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { denunciasservice } from '../servicios/denuncias.services';
 
 @Component({
@@ -39,6 +40,12 @@ export class TodaslasdenunciasComponent implements OnInit {
         this.denunciasactivas = response
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.message
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -48,8 +55,15 @@ export class TodaslasdenunciasComponent implements OnInit {
       response => {
         console.log(response)
         this.todaslasdenuncias = response
+        
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.message
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }

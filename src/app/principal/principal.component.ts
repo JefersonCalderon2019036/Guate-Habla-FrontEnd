@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { noticias } from '../modelos/noticias.modelos';
 import { chatsservices } from '../servicios/chats.services';
 import { noticiasservices } from '../servicios/noticias.services';
@@ -52,6 +53,12 @@ export class PrincipalComponent implements OnInit {
         this.noticias = Response
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.mensaje
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura + ", actualiza la pagina para solucionar este problema"
+        })
       }
     )
   }
@@ -68,6 +75,12 @@ export class PrincipalComponent implements OnInit {
         this.recargar();
       },(error) => {
         console.log(<any>error)
+        let textura = <any>error.error.mensaje
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -104,6 +117,21 @@ export class PrincipalComponent implements OnInit {
         console.log(this.chat)
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.message
+        let textura2 = <any>error.error.mensaje
+        if(textura != ""){
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: textura + ", Si te sale el chat en negro solo necesitas cerrar seción y volver a entrar"
+          })
+        }else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: "A ocurrido "+textura2
+          })
+        }
       }
     )
   }
@@ -115,6 +143,21 @@ export class PrincipalComponent implements OnInit {
         this.verchat()
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.message
+        let textura2 = <any>error.error.mensaje
+        if(textura != ""){
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: textura
+          })
+        }else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: textura2
+          })
+        }
       }
     )
   }

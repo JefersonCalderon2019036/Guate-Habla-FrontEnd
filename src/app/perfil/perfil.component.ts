@@ -4,6 +4,7 @@ import { usuarios } from '../modelos/user.modelos';
 import { UsersServices } from '../servicios/user.services';
 import { MenudenavegacionComponent } from '../menudenavegacion/menudenavegacion.component'
 import { denunciasservice } from '../servicios/denuncias.services';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-perfil',
@@ -41,6 +42,12 @@ export class PerfilComponent implements OnInit {
         this.MiUsuario = response
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.mensaje
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -54,7 +61,11 @@ export class PerfilComponent implements OnInit {
       this.usuarioModel.direccion == "" &&
       this.usuarioModel.img == ""
     ){
-      console.log("No hay datos a actualizar")
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "No hay datos a actualizar"
+      })
     }else{
       if(
         this.usuarioModel.name == "" &&
@@ -63,6 +74,7 @@ export class PerfilComponent implements OnInit {
         this.usuarioModel.telefono == 0 &&
         this.usuarioModel.direccion == "" &&
         this.usuarioModel.img != ""
+        
       ){
         let arrayuser = { img: this.usuarioModel.img}
 
@@ -72,6 +84,12 @@ export class PerfilComponent implements OnInit {
               this.VerMiPerfil();
             }, (error) => {
               console.log(<any>error)
+              let textura = <any>error.error.mensaje
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: textura
+              })
             }
           )
       }else{
@@ -92,6 +110,12 @@ export class PerfilComponent implements OnInit {
               this.VerMiPerfil();
             }, (error) => {
               console.log(<any>error)
+              let textura = <any>error.error.mensaje
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: textura
+              })
             }
           )
         }else{
@@ -109,6 +133,12 @@ export class PerfilComponent implements OnInit {
                   this.VerMiPerfil();
                 }, (error) => {
                   console.log(<any>error)
+                  let textura = <any>error.error.mensaje
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: textura
+                  })
                 }
               )
           }else{
@@ -130,6 +160,12 @@ export class PerfilComponent implements OnInit {
                   this.VerMiPerfil();
                 }, (error) => {
                   console.log(<any>error)
+                  let textura = <any>error.error.mensaje
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: textura
+                  })
                 }
               )
             }else{
@@ -150,6 +186,12 @@ export class PerfilComponent implements OnInit {
                     this.VerMiPerfil();
                   }, (error) => {
                     console.log(<any>error)
+                    let textura = <any>error.error.mensaje
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: textura
+                    })
                   }
                 )
               }else{
@@ -169,6 +211,12 @@ export class PerfilComponent implements OnInit {
                         this.VerMiPerfil();
                       }, (error) => {
                         console.log(<any>error)
+                        let textura = <any>error.error.mensaje
+                        Swal.fire({
+                          icon: 'error',
+                          title: 'Oops...',
+                          text: textura
+                        })
                       }
                     )
                   }else{
@@ -191,6 +239,12 @@ export class PerfilComponent implements OnInit {
                             this.VerMiPerfil();
                           }, (error) => {
                             console.log(<any>error)
+                            let textura = <any>error.error.mensaje
+                            Swal.fire({
+                              icon: 'error',
+                              title: 'Oops...',
+                              text: textura
+                            })
                           }
                         )
                       }else{
@@ -211,6 +265,12 @@ export class PerfilComponent implements OnInit {
                               this.VerMiPerfil();
                             }, (error) => {
                               console.log(<any>error)
+                              let textura = <any>error.error.mensaje
+                              Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: textura
+                              })
                             }
                           )
                         }else{
@@ -230,6 +290,12 @@ export class PerfilComponent implements OnInit {
                               this.VerMiPerfil();
                             }, (error) => {
                               console.log(<any>error)
+                              let textura = <any>error.error.mensaje
+                              Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: textura
+                              })
                             }
                           )
                         }else{
@@ -249,6 +315,12 @@ export class PerfilComponent implements OnInit {
                               this.VerMiPerfil();
                             }, (error) => {
                               console.log(<any>error)
+                              let textura = <any>error.error.mensaje
+                              Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: textura
+                              })
                             }
                           )
                         }else{
@@ -266,6 +338,12 @@ export class PerfilComponent implements OnInit {
                               this.VerMiPerfil();
                             }, (error) => {
                               console.log(<any>error)
+                              let textura = <any>error.error.mensaje
+                              Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: textura
+                              })
                             }
                           )
                         }else{
@@ -287,6 +365,12 @@ export class PerfilComponent implements OnInit {
                                 this.VerMiPerfil();
                               }, (error) => {
                                 console.log(<any>error)
+                                let textura = <any>error.error.mensaje
+                                Swal.fire({
+                                  icon: 'error',
+                                  title: 'Oops...',
+                                  text: textura
+                                })
                               }
                             )
                           }else{
@@ -307,6 +391,12 @@ export class PerfilComponent implements OnInit {
                                 this.VerMiPerfil();
                               }, (error) => {
                                 console.log(<any>error)
+                                let textura = <any>error.error.mensaje
+                                Swal.fire({
+                                  icon: 'error',
+                                  title: 'Oops...',
+                                  text: textura
+                                })
                               }
                             )
                           }else{
@@ -326,6 +416,12 @@ export class PerfilComponent implements OnInit {
                                 this.VerMiPerfil();
                               }, (error) => {
                                 console.log(<any>error)
+                                let textura = <any>error.error.mensaje
+                                Swal.fire({
+                                  icon: 'error',
+                                  title: 'Oops...',
+                                  text: textura
+                                })
                               }
                             )
                           }else{
@@ -344,6 +440,12 @@ export class PerfilComponent implements OnInit {
                                 this.VerMiPerfil();
                               }, (error) => {
                                 console.log(<any>error)
+                                let textura = <any>error.error.mensaje
+                                    Swal.fire({
+                                      icon: 'error',
+                                      title: 'Oops...',
+                                      text: textura
+                                    })
                               }
                             )
                           }else{
@@ -361,6 +463,12 @@ export class PerfilComponent implements OnInit {
                                 this.VerMiPerfil();
                               }, (error) => {
                                 console.log(<any>error)
+                                let textura = <any>error.error.mensaje
+                                Swal.fire({
+                                  icon: 'error',
+                                  title: 'Oops...',
+                                  text: textura
+                                })
                               }
                             )
                           }else{
@@ -383,6 +491,12 @@ export class PerfilComponent implements OnInit {
                                     this.VerMiPerfil();
                                   }, (error) => {
                                     console.log(<any>error)
+                                    let textura = <any>error.error.mensaje
+                                    Swal.fire({
+                                      icon: 'error',
+                                      title: 'Oops...',
+                                      text: textura
+                                    })
                                   }
                                 )
                               }else{
@@ -404,6 +518,12 @@ export class PerfilComponent implements OnInit {
                                     this.VerMiPerfil();
                                   }, (error) => {
                                     console.log(<any>error)
+                                    let textura = <any>error.error.mensaje
+                                    Swal.fire({
+                                      icon: 'error',
+                                      title: 'Oops...',
+                                      text: textura
+                                    })
                                   }
                                 )
                               }else{
@@ -424,6 +544,12 @@ export class PerfilComponent implements OnInit {
                                     this.VerMiPerfil();
                                   }, (error) => {
                                     console.log(<any>error)
+                                    let textura = <any>error.error.mensaje
+                                    Swal.fire({
+                                      icon: 'error',
+                                      title: 'Oops...',
+                                      text: textura
+                                    })
                                   }
                                 )
                               }else{
@@ -443,6 +569,12 @@ export class PerfilComponent implements OnInit {
                                     this.VerMiPerfil();
                                   }, (error) => {
                                     console.log(<any>error)
+                                    let textura = <any>error.error.mensaje
+                                    Swal.fire({
+                                      icon: 'error',
+                                      title: 'Oops...',
+                                      text: textura
+                                    })
                                   }
                                 )
                               }else{
@@ -461,6 +593,12 @@ export class PerfilComponent implements OnInit {
                                     this.VerMiPerfil();
                                   }, (error) => {
                                     console.log(<any>error)
+                                    let textura = <any>error.error.mensaje
+                                    Swal.fire({
+                                      icon: 'error',
+                                      title: 'Oops...',
+                                      text: textura
+                                    })
                                   }
                                 )
                               }else{
@@ -472,6 +610,12 @@ export class PerfilComponent implements OnInit {
                                     this.VerMiPerfil();
                                   }, (error) => {
                                     console.log(<any>error)
+                                    let textura = <any>error.error.mensaje
+                                    Swal.fire({
+                                      icon: 'error',
+                                      title: 'Oops...',
+                                      text: textura
+                                    })
                                   }
                                 )
                               }
@@ -513,6 +657,12 @@ export class PerfilComponent implements OnInit {
         this._router.navigate(['/inicio']);
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.mensaje
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -524,6 +674,12 @@ export class PerfilComponent implements OnInit {
         this.denunciasuser = response
       }, error => {
         console.log(<any>error)
+        let textura = <any>error.error.message
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -535,6 +691,12 @@ export class PerfilComponent implements OnInit {
         this.denunciaspolicias = response
       }, error => {
         console.log(<any>error)
+        let textura = <any>error.error.message
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { noticias } from '../modelos/noticias.modelos';
 import { noticiasservices } from '../servicios/noticias.services';
 import { UsersServices } from '../servicios/user.services';
@@ -48,6 +49,12 @@ export class DetallesnoticiasComponent implements OnInit {
         this.Comentarios = Response.comentarios
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.mensaje
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -60,6 +67,12 @@ export class DetallesnoticiasComponent implements OnInit {
         this.VerSolaUnaNoticia();
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.mensaje
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -79,6 +92,12 @@ export class DetallesnoticiasComponent implements OnInit {
         this._router.navigate(['/principal'])
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.mensaje
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -90,6 +109,11 @@ export class DetallesnoticiasComponent implements OnInit {
       this.arraydatosactualizar.descripcion =="",
       this.arraydatosactualizar.img ==""){
       console.log('No hay datos para actualizar')
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'No hay datos para actualizar'
+        })
     }else{
       if(
         this.arraydatosactualizar.titulo == "",
@@ -104,6 +128,12 @@ export class DetallesnoticiasComponent implements OnInit {
               this.VerificacionDelRol();
             }, (error) => {
               console.log(<any>error)
+              let textura = <any>error.error.mensaje
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: textura
+              })
             }
           )
       }else{
@@ -121,6 +151,12 @@ export class DetallesnoticiasComponent implements OnInit {
                  this.VerificacionDelRol();
               }, (error) => {
                 console.log(<any>error)
+                let textura = <any>error.error.mensaje
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: textura
+                })
               }
             )
         }else{
@@ -137,6 +173,12 @@ export class DetallesnoticiasComponent implements OnInit {
                    this.VerificacionDelRol();
                 }, (error) => {
                   console.log(<any>error)
+                  let textura = <any>error.error.mensaje
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: textura
+                  })
                 }
               )
           }else{
@@ -155,6 +197,12 @@ export class DetallesnoticiasComponent implements OnInit {
                      this.VerificacionDelRol();
                   }, (error) => {
                     console.log(<any>error)
+                    let textura = <any>error.error.mensaje
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: textura
+                    })
                   }
                 )
             }else{
@@ -172,6 +220,12 @@ export class DetallesnoticiasComponent implements OnInit {
                        this.VerificacionDelRol();
                     }, (error) => {
                       console.log(<any>error)
+                      let textura = <any>error.error.mensaje
+                      Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: textura
+                      })
                     }
                   )
               }else{
@@ -184,6 +238,12 @@ export class DetallesnoticiasComponent implements OnInit {
                          this.VerificacionDelRol();
                       }, (error) => {
                         console.log(<any>error)
+                        let textura = <any>error.error.mensaje
+                        Swal.fire({
+                          icon: 'error',
+                          title: 'Oops...',
+                          text: textura
+                        })
                       }
                     )
               }
@@ -208,6 +268,12 @@ export class DetallesnoticiasComponent implements OnInit {
         this.VerificacionDelRol();
       }, error => {
         console.log(<any>error)
+        let textura = <any>error.error.mensaje
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -220,6 +286,12 @@ export class DetallesnoticiasComponent implements OnInit {
         this.VerificacionDelRol();
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.mensaje
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }

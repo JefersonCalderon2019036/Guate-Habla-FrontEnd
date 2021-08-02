@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { usuarios } from '../modelos/user.modelos';
 import { UsersServices } from '../servicios/user.services';
 
@@ -33,6 +34,12 @@ export class UsuariosComponent implements OnInit {
         this.usuarios = response
       }, error  =>{
         console.log(<any>error)
+        let textura = <any>error.error.mensaje
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -45,6 +52,12 @@ export class UsuariosComponent implements OnInit {
         this.VerTodosLosUsuariosAdmin();
       }, error => {
         console.log(<any>error)
+        let textura = <any>error.error.mensaje
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -57,6 +70,12 @@ export class UsuariosComponent implements OnInit {
         this.obtenerUsuarioId(this.idusuarioadmin);
       }, error => {
         console.log(<any>error)
+        let textura = <any>error.error.mensaje
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -70,6 +89,12 @@ export class UsuariosComponent implements OnInit {
         this.obtenerUsuarioId(this.idusuarioadmin);
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.mensaje
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -83,6 +108,12 @@ export class UsuariosComponent implements OnInit {
         this.obtenerUsuarioId(this.idusuarioadmin);
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.mensaje
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -96,6 +127,12 @@ export class UsuariosComponent implements OnInit {
         this.obtenerUsuarioId(this.idusuarioadmin);
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.mensaje
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -109,6 +146,11 @@ export class UsuariosComponent implements OnInit {
       this.arrayuser2.direccion == ""
     ){
       console.log("No existen datos para actualizar")
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: "No existen datos para actualizar"
+        })
     }else{
 
     
@@ -128,6 +170,12 @@ export class UsuariosComponent implements OnInit {
               this.obtenerUsuarioId(this.idusuarioadmin);
             }, (error) => {
               console.log(<any>error)
+              let textura = <any>error.error.mensaje
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: textura
+              })
             }
           )
       }else{
@@ -147,6 +195,12 @@ export class UsuariosComponent implements OnInit {
               this.obtenerUsuarioId(this.idusuarioadmin);
             }, (error) => {
               console.log(<any>error)
+              let textura = <any>error.error.mensaje
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: textura
+              })
             }
           )
         }else{
@@ -166,6 +220,12 @@ export class UsuariosComponent implements OnInit {
               this.obtenerUsuarioId(this.idusuarioadmin);
             }, (error) => {
               console.log(<any>error)
+              let textura = <any>error.error.mensaje
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: textura
+              })
             }
           )
           }else{
@@ -185,6 +245,12 @@ export class UsuariosComponent implements OnInit {
                   this.obtenerUsuarioId(this.idusuarioadmin);
                 }, (error) => {
                   console.log(<any>error)
+                  let textura = <any>error.error.mensaje
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: textura
+                  })
                 }
               )
             }else{
@@ -204,6 +270,12 @@ export class UsuariosComponent implements OnInit {
                     this.obtenerUsuarioId(this.idusuarioadmin);
                   }, (error) => {
                     console.log(<any>error)
+                    let textura = <any>error.error.mensaje
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: textura
+                    })
                   }
                 )
               }else{
@@ -223,6 +295,12 @@ export class UsuariosComponent implements OnInit {
                     this.obtenerUsuarioId(this.idusuarioadmin);
                   }, (error) => {
                     console.log(<any>error)
+                    let textura = <any>error.error.mensaje
+                      Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: textura
+                      })
                   }
                 )
                 }else{
@@ -245,6 +323,12 @@ export class UsuariosComponent implements OnInit {
                         this.obtenerUsuarioId(this.idusuarioadmin);
                       }, (error) => {
                         console.log(<any>error)
+                        let textura = <any>error.error.mensaje
+                        Swal.fire({
+                          icon: 'error',
+                          title: 'Oops...',
+                          text: textura
+                        })
                       }
                     )
                   }else{
@@ -266,6 +350,12 @@ export class UsuariosComponent implements OnInit {
                           this.obtenerUsuarioId(this.idusuarioadmin);
                         }, (error) => {
                           console.log(<any>error)
+                          let textura = <any>error.error.mensaje
+                          Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: textura
+                          })
                         }
                       )
                     }else{
@@ -286,6 +376,12 @@ export class UsuariosComponent implements OnInit {
                             this.obtenerUsuarioId(this.idusuarioadmin);
                           }, (error) => {
                             console.log(<any>error)
+                            let textura = <any>error.error.mensaje
+                            Swal.fire({
+                              icon: 'error',
+                              title: 'Oops...',
+                              text: textura
+                            })
                           }
                         )
                       }else{
@@ -305,6 +401,12 @@ export class UsuariosComponent implements OnInit {
                               this.obtenerUsuarioId(this.idusuarioadmin);
                             }, (error) => {
                               console.log(<any>error)
+                              let textura = <any>error.error.mensaje
+                              Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: textura
+                              })
                             }
                           )
                         }else{
@@ -329,6 +431,12 @@ export class UsuariosComponent implements OnInit {
                                 this.obtenerUsuarioId(this.idusuarioadmin);
                               }, (error) => {
                                 console.log(<any>error)
+                                let textura = <any>error.error.mensaje
+                                Swal.fire({
+                                  icon: 'error',
+                                  title: 'Oops...',
+                                  text: textura
+                                })
                               }
                             )
                           }else{
@@ -352,6 +460,12 @@ export class UsuariosComponent implements OnInit {
                                   this.obtenerUsuarioId(this.idusuarioadmin);
                                 }, (error) => {
                                   console.log(<any>error)
+                                  let textura = <any>error.error.mensaje
+                                  Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: textura
+                                  })
                                 }
                               )
                             }else{
@@ -372,6 +486,12 @@ export class UsuariosComponent implements OnInit {
                                     this.obtenerUsuarioId(this.idusuarioadmin);
                                   }, (error) => {
                                     console.log(<any>error)
+                                    let textura = <any>error.error.mensaje
+                                    Swal.fire({
+                                      icon: 'error',
+                                      title: 'Oops...',
+                                      text: textura
+                                    })
                                   }
                                 )
                               }else{
@@ -391,6 +511,12 @@ export class UsuariosComponent implements OnInit {
                                       this.obtenerUsuarioId(this.idusuarioadmin);
                                     }, (error) => {
                                       console.log(<any>error)
+                                      let textura = <any>error.error.mensaje
+                                      Swal.fire({
+                                        icon: 'error',
+                                        title: 'Oops...',
+                                        text: textura
+                                      })
                                     }
                                   )
                                 }else{
@@ -404,7 +530,13 @@ export class UsuariosComponent implements OnInit {
                                       this.obtenerUsuarioId(this.idusuarioadmin);
                                     }, (error) => {
                                       console.log(<any>error)
-                                    }
+                                      let textura = <any>error.error.mensaje
+                                      Swal.fire({
+                                        icon: 'error',
+                                        title: 'Oops...',
+                                        text: textura
+                                      })
+                                      }
                                   )
                                 }
                               }

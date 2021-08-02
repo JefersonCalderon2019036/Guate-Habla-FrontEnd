@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { usuarios } from '../modelos/user.modelos';
 import { UsersServices } from '../servicios/user.services';
 
@@ -33,8 +34,15 @@ export class RegisterComponent implements OnInit {
         this._router.navigate(['/login'])
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.mensaje
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
+    
   }
 
 }

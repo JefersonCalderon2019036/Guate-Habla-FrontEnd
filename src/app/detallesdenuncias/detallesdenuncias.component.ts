@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { chatsservices } from '../servicios/chats.services';
 import { denunciasservice } from '../servicios/denuncias.services';
 import { UsersServices } from '../servicios/user.services';
@@ -34,6 +35,12 @@ export class DetallesdenunciasComponent implements OnInit {
         this.datosdenuncia = response
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.message
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -46,6 +53,12 @@ export class DetallesdenunciasComponent implements OnInit {
         this.EliminarChat();
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.message
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -58,6 +71,12 @@ export class DetallesdenunciasComponent implements OnInit {
         this.Editarperfil();
       }, (error) => {
         console.log(<any>error)
+        let textura = <any>error.error.message
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     )
   }
@@ -70,6 +89,12 @@ export class DetallesdenunciasComponent implements OnInit {
            console.log(response)
       }, (error) => {
           console.log(<any>error)
+          let textura = <any>error.error.message
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: textura
+          })
       }
     )
   }

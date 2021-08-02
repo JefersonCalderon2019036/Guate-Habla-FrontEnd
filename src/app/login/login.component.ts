@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { usuarios } from '../modelos/user.modelos';
 import { UsersServices } from '../servicios/user.services';
 
@@ -35,10 +36,17 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("nombre", this.identidad.name);
         localStorage.setItem("imagendemiperfil", this.identidad.img);
         localStorage.setItem("iddelusuario", this.identidad._id);
+        localStorage.setItem("idchat", "")
         this._router.navigate(['/principal'])
       },
       (error) => {
         console.log(<any>error);
+        let textura = <any>error.error.message
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: textura
+        })
       }
     );
   }
