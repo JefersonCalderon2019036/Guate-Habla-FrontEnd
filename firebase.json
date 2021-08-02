@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/Guate-Habla-Front-end",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

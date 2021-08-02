@@ -163,4 +163,15 @@ h3{
     background:linear-gradient(#070707, transparent,transparent, transparent,transparent, #070707);
     border: 1px solid white;
     border-radius: 3px;
+    padding: 20px;
 }
+* {
+    box-sizing: border-box;
+  }
+  
+  .card {
+    padding: 0 6px;
+    float: left;
+
+  }
+  

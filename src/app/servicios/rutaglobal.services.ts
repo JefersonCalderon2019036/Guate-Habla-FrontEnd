@@ -1,3 +1,3 @@
   export var serviciosglobales = {
-    url: 'http://localhost:3000/api/'
+    url: 'https://guate-habla.herokuapp.com/api/'
   }
