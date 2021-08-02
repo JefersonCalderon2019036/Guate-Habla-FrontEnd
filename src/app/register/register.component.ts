@@ -29,6 +29,7 @@ export class RegisterComponent implements OnInit {
     this._usuarioService.registrar(this.usuarioModel).subscribe(
       (response) => {
         console.log(response)
+        localStorage.setItem("idchat", "")
         this._router.navigate(['/login'])
       }, (error) => {
         console.log(<any>error)
